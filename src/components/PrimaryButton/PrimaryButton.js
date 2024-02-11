@@ -1,9 +1,9 @@
 import './PrimaryButton.scss';
 
-const PrimaryButton = ({btnText}) => {
+const PrimaryButton = ({ className, btnText }) => {
     return (
         <div className='primary-btn'>
-            <button className='primary-btn__btn'>
+            <button className={`primary-btn__btn ${className}`}>
                 {btnText}
             </button>
         </div>
