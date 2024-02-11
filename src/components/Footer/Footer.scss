@@ -1,0 +1,12 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+.footer {
+    background-color: $primary-background;
+    margin: 0;
+    padding: 1rem;
+    &__text {
+        text-transform: capitalize;
+    }
+}

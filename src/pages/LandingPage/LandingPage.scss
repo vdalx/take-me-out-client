@@ -3,6 +3,19 @@
 @use '../../styles/partials/mixins' as *;
 
 .landing-page {
+    align-items: center;
+    background-image: url('../../assets/images/mobile-kelvin-moquete-LOV7Gbmgm30-unsplash-523x934.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+    &__btn-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
     &__btn {
         &--type-one {
             background-color: $type-one-btn;

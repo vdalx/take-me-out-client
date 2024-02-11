@@ -8,6 +8,7 @@ import LoginPage from './pages/LoginPage';
 import AccountPage from './pages/AccountPage';
 import EventListingsPage from './pages/EventListingsPage';
 import EventPage from './pages/EventPage';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/event-list' element={<EventListingsPage/>} />
         <Route path='/event' element={<EventPage/>} />
       </Routes>
+      <Footer />
       </BrowserRouter>
     </div>
   );

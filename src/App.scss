@@ -4,6 +4,7 @@
 
 * {
     margin: 0;
+    padding: 0;
 }
 
 body {
@@ -31,6 +32,13 @@ h2 {
         font-size: 1.75rem;
         line-height: 2.75rem;
     }
+}
+
+h3 {
+    font-family: 'nunito';
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
 }
 
 p {
