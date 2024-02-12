@@ -39,6 +39,9 @@
     }
     &__title-wrap {
         padding-top: 6rem;
+        @include desktop {
+            display: none;
+        }
     }
     &__title {
         text-shadow: -1.5px -1.5px 0 #FFFFFF, 1.5px -1.5px 0 #FFFFFF, -1.5px 1.5px 0 #FFFFFF, 1.5px 1.5px 0 #FFFFFF;
