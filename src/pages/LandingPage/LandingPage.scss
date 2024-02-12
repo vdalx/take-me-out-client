@@ -25,6 +25,9 @@
             position: absolute;
             top: 0;
             width: 100%;
+            @include desktop {
+                background-image: url('../../assets/images/desktop-kelvin-moquete-LOV7Gbmgm30-unsplash-1920x1080.jpg');
+            }
         }
     }
     &__content {
