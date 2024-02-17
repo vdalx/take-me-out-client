@@ -54,10 +54,14 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-top: 12rem;
+        margin-top: 12rem;
+        @include desktop {
+            background-color: rgba(251, 252, 252, 0.75);
+            border-radius: 0.25rem;
+            padding: 1.5rem;
+        }
     }
     &__btn {
-        padding-bottom: 1.5rem;
         &--type-one {
             background-color: $type-one-btn;
             border: 0.0625rem solid $type-one-btn-border;
@@ -67,6 +71,7 @@
             border: 0.0625rem solid $type-two-btn-border;
             background-color: $type-two-btn;
             color: $type-two-btn-text;
+            margin-bottom: 1.5rem;
         }
     }   
 }

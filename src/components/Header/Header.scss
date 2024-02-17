@@ -5,13 +5,16 @@
 .header {
     background-color: $primary-background;
     margin: 0;
-    padding: 1.5rem;
+    padding: 0.75rem 1.5rem;
     display: none;
-    &__text {
-        text-transform: capitalize;
-    }
     @include desktop {
         display: block;
+    }
+    &__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
     }
     &__title-wrap {
         padding-top: 6rem;
@@ -19,8 +22,28 @@
     &__title {
         text-shadow: -1.5px -1.5px 0 #FFFFFF, 1.5px -1.5px 0 #FFFFFF, -1.5px 1.5px 0 #FFFFFF, 1.5px 1.5px 0 #FFFFFF;
         text-transform: capitalize;
+        white-space: nowrap;
         &--bold {
             color: $tertiary-text;
         }
+    }
+    &__nav {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        @include tablet {
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+    }
+    &__nav-list {
+        align-items: center;
+        display: flex;
+        justify-content: space-evenly;
+        list-style-type: none;
+    }
+    &__nav-list-item {
+        margin-right: 1.5rem;
     }
 }

@@ -6,7 +6,17 @@
     background-color: $primary-background;
     margin: 0;
     padding: 1.5rem;
+    &__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
     &__text {
         text-transform: capitalize;
+    }
+    &__social-icon {
+        height: 1.5rem;
+        margin: 0rem 0.5rem;
     }
 }
