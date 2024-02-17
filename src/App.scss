@@ -4,11 +4,13 @@
 
 * {
     margin: 0;
+    padding: 0;
 }
 
 body {
     box-sizing: border-box;
-    font-family: 'nunito'; 
+    color: $primary-text;
+    font-family: 'nunito';
 }
 
 h1 {
@@ -17,7 +19,7 @@ h1 {
     font-weight: 700;
     line-height: 2rem;
     @include tablet {
-        font-size: 2.5rem;
+        font-size: 3rem;
         line-height: 2.75rem;
     }
 }
@@ -31,6 +33,13 @@ h2 {
         font-size: 1.75rem;
         line-height: 2.75rem;
     }
+}
+
+h3 {
+    font-family: 'nunito';
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
 }
 
 p {

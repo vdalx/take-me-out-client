@@ -8,11 +8,14 @@ import LoginPage from './pages/LoginPage';
 import AccountPage from './pages/AccountPage';
 import EventListingsPage from './pages/EventListingsPage';
 import EventPage from './pages/EventPage';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <Header />
       <Routes>
         <Route path='/' element={<LandingPage/>} />
         <Route path='/home' element={<HomePage/>} />
@@ -22,6 +25,7 @@ function App() {
         <Route path='/event-list' element={<EventListingsPage/>} />
         <Route path='/event' element={<EventPage/>} />
       </Routes>
+      <Footer />
       </BrowserRouter>
     </div>
   );
