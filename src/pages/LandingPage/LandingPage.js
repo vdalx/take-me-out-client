@@ -1,4 +1,5 @@
 import './LandingPage.scss';
+import { Link } from 'react-router-dom';
 import PrimaryButton from '../../components/PrimaryButton';
 
 const LandingPage = () => {
@@ -13,16 +14,20 @@ const LandingPage = () => {
                     </div>
                     <div className='landing-page__btn-container'>
                         <div className='landing-page__btn'>
-                            <PrimaryButton 
-                                btnText='log in'
-                                className='landing-page__btn--type-two'
-                            />
+                            <Link to='/login'>
+                                <PrimaryButton 
+                                    btnText='log in'
+                                    className='landing-page__btn--type-two'
+                                />
+                            </Link>
                         </div>
                         <div className='landing-page__btn'>
-                            <PrimaryButton 
-                                btnText='sign up'
-                                className='landing-page__btn--type-one'
-                            />
+                            <Link to='/create-account'>
+                                <PrimaryButton 
+                                    btnText='sign up'
+                                    className='landing-page__btn--type-one'
+                                />
+                            </Link>
                         </div>
                     </div>
                 </div>

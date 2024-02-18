@@ -6,10 +6,6 @@
     background-color: $primary-background;
     margin: 0;
     padding: 0.75rem 1.5rem;
-    display: none;
-    @include desktop {
-        display: block;
-    }
     &__container {
         display: flex;
         flex-direction: row;
