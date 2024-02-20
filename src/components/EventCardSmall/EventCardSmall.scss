@@ -1,0 +1,16 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+.event-card-small {
+    background-color: $form-background;
+    border-radius: 0.2rem;
+    box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.10);
+    margin: 1.25rem;
+    @include tablet {
+        margin: 1.75rem;
+    }
+    @include desktop {
+        margin: 4rem;
+    }
+}
