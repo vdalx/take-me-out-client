@@ -56,11 +56,11 @@
         align-items: center;
         display: flex;
         flex-direction: column;
-        padding: 1.5rem;
+        padding: 1.25rem;
         @include tablet {
             flex-direction: row;
             justify-content: center;
-            padding: 2rem;
+            padding: 2rem 2rem 1.5rem 2rem;
         }
     }
     &__btn {
@@ -75,6 +75,20 @@
             background-color: $type-two-btn;
             color: $type-two-btn-text;
         }
+    }
+    &__login-prompt {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 1.25rem;
+    }
+    &__login-prompt-text {
+        font-size: 0.90rem;
+    }
+    &__login-prompt-link {
+        margin-left: 0.25rem;
+        font-weight: 600;
+        text-decoration: none;
     }
     &__err {
         font-size: 0.75rem;
@@ -91,8 +105,12 @@
 }
 
 .submit-btn {
-    padding-right: 0.5rem;
+    @include tablet {
+        padding-right: 0.5rem;
+    }
 }
 .primary-btn {
-    padding-left: 0.5rem;
+    @include tablet {
+        padding-left: 0.5rem;
+    }
 }

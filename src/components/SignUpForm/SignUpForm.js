@@ -1,6 +1,7 @@
 import './SignUpForm.scss';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SubmitButton from '../SubmitButton';
 import PrimaryButton from '../PrimaryButton';
 import ErrorIcon from '../../assets/icons/error-24px.svg';
@@ -191,6 +192,16 @@ const SignUpForm = () => {
                         btnText='reset'
                         handleOnClick={resetForm}
                     />
+                </div>
+                <div className='signup-form__login-prompt'>
+                    <p className='signup-form__login-prompt-text'>
+                        Already have an account?
+                        <Link to='/login'>
+                            <span className='signup-form__login-prompt-link'>
+                                Login
+                            </span>
+                        </Link>
+                    </p>
                 </div>
             </div>
         </div>
