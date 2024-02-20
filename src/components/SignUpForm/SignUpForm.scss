@@ -1,0 +1,116 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+.signup-form {
+    &__container {
+        background-color: $form-background;
+        border-radius: 0.2rem;
+        box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.10);
+        margin: 1.25rem;
+        @include tablet {
+            margin: 1.75rem;
+        }
+        @include desktop {
+            margin: 4rem;
+        }
+    }
+    &__title-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem 0rem;
+    }
+    &__form {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    &__input {
+        border-radius: 0.25rem;
+        border: 0.0625rem solid $input-field-border;
+        background: $input-field;
+        display: block;
+        height: 2.25rem;
+        margin-bottom: 1rem;
+        width: 14rem;
+        &::placeholder {
+            padding-left: 0.5rem;
+        }
+        @include tablet {
+            width: 18rem;
+        }
+    }
+    &__terms-checkbox {
+        align-items: center;
+        display: flex;
+        margin-bottom: 0.75rem;
+    }
+    &__terms-checkbox-label {
+        font-size: 0.75rem;
+    }
+    &__terms-checkbox-input {
+        margin-right: 0.5rem;
+    }
+    &__btn-container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 1.25rem;
+        @include tablet {
+            flex-direction: row;
+            justify-content: center;
+            padding: 2rem 2rem 1.5rem 2rem;
+        }
+    }
+    &__btn {
+        margin-bottom: 1rem;
+        &--submit {
+            background-color: $type-one-btn;
+            border: 0.0625rem solid $type-one-btn-border;
+            color: $type-one-btn-text;
+        }
+        &--reset {
+            border: 0.0625rem solid $type-two-btn-border;
+            background-color: $type-two-btn;
+            color: $type-two-btn-text;
+        }
+    }
+    &__login-prompt {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 1.25rem;
+    }
+    &__login-prompt-text {
+        font-size: 0.90rem;
+    }
+    &__login-prompt-link {
+        margin-left: 0.25rem;
+        font-weight: 600;
+        text-decoration: none;
+    }
+    &__err {
+        font-size: 0.75rem;
+        margin: 0.5rem 0rem;
+        &--final {
+            color: $warning-text;
+            font-weight: 600;
+        }
+    }
+    &__err-icon {
+        height: 0.75rem;
+        margin-right: 0.25rem;
+    }
+}
+
+.submit-btn {
+    @include tablet {
+        padding-right: 0.5rem;
+    }
+}
+.primary-btn {
+    @include tablet {
+        padding-left: 0.5rem;
+    }
+}
