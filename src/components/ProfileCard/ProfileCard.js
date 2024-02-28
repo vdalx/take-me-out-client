@@ -1,9 +1,9 @@
-import './AccountProfileCard.scss';
+import './ProfileCard.scss';
 import UserImg from '../../assets/images/user-photo-1633332755192-727a05c4013d.webp';
 import UserIcon from '../../assets/icons/user-solid.svg';
 import LocationIcon from '../../assets/icons/location-dot-solid.svg';
 
-const AccountProfileCard = () => {
+const ProfileCard = () => {
     return (
         <div className='profile-card'>
             <div className='profile-card__container'>
@@ -34,4 +34,4 @@ const AccountProfileCard = () => {
     )
 }
 
-export default AccountProfileCard;
+export default ProfileCard;

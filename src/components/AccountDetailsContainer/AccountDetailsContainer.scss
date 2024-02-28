@@ -1,0 +1,24 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+.account-details {
+    &__profile {
+        background: $card-background;
+        margin: 1.25rem;
+    }
+    &__menu {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 1rem;
+    }
+    &__account-tab-container {
+        display: flex;
+    }
+    &__settings-tab-container {
+        display: flex;
+    }
+    &__account-tab-icon, &__settings-tab-icon {
+        height: 1rem;
+      }
+}

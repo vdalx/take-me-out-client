@@ -1,0 +1,73 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+.profile-card {
+&__container {
+   background-color: $form-background;
+   border-radius: 0.2rem;
+   box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.10);
+   display: flex;
+   justify-content: flex-start;
+   margin: 1.25rem;
+   padding: 1rem;
+   @include tablet {
+      margin: 1.75rem;
+    }
+   @include desktop {
+      margin: 4rem;
+    }
+}
+ &__img-container {
+   align-items: center;
+   background-color: $tertiary-background;
+   border-radius: 50%;
+   display: flex;
+   height: 5.3rem;
+   justify-content: center;
+   margin: 0.75rem;
+   overflow: hidden;
+   width: 5.3rem;
+ }
+ &__img {
+   height: 100%;
+   width: 100%;
+ }
+ &__details-container {
+   align-items: center;
+   display: flex;
+   flex: 2 1 0;
+   flex-direction: column;
+   justify-content: space-evenly;
+   margin: 1.25rem 1.25rem 0.25rem 1.25rem;
+ }
+ &__user-name-container {
+   display: flex;
+   justify-content:first baseline;
+   margin-bottom: 0.5rem;
+   width: 100%;
+ }
+ &__user-location-container {
+   display: flex;
+   justify-content:first baseline;
+   width: 100%;
+ }
+ &__user-name {
+   text-transform: capitalize;
+ }
+ &__user-icon, &__location-icon {
+   height: 1rem;
+   margin-right: 1rem;
+   text-align: left;
+ }
+ &__edit-profile-prompt {
+   margin-top: auto;
+   text-align: center;
+   width: 100%;
+ }
+ &__edit-profile-link {
+   color: $tertiary-text;
+   font-weight: 700;
+   text-transform: capitalize;
+ }
+}
