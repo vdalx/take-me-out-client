@@ -1,12 +1,15 @@
 import './AccountPage.scss';
 import AccountProfileCard from '../../components/AccountProfileCard';
-import EventCardSmall from '../../components/EventCardSmall';
+import EventListContainer from '../../components/EventListContainer';
+import VenueListContainer from '../../components/VenueListContainer';
 
 const AccountPage = () => {
     return (
         <div className='account-page'>
             <AccountProfileCard />
-            <EventCardSmall />
+            <EventListContainer eventListTitle='Upcoming Events'/>
+            <EventListContainer eventListTitle='Saved Events'/>
+            <VenueListContainer venueListTitle='Favourite Venues' />
         </div>
     )
 }

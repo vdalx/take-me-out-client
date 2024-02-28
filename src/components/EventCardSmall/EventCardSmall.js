@@ -1,11 +1,12 @@
 import './EventCardSmall.scss';
+import EventImg from '../../assets/images/chris-zhang-uGh-hHVPRYI-unsplash.jpg';
 
 const EventCardSmall = () => {
     return (
         <div className='event-card-small'>
             <div className='event-card-small__hero-img-container'>
                 <div>
-                    <img className='event-card-small__hero-img'/>
+                    <img className='event-card-small__hero-img' src={EventImg} alt='Venue of the event'/>
                 </div>
             </div>
             <div className='event-card-small__event-details-container'>
