@@ -3,14 +3,34 @@
 @use '../../styles/partials/mixins' as *;
 
 .account-details {
-    &__profile {
+    &__container {
         background: $card-background;
+        border-radius: 0.2rem;
         margin: 1.25rem;
     }
     &__menu {
         display: flex;
         justify-content: space-evenly;
+    }
+    &__menu-tab {
+        background: $primary-background;
+        border-bottom: 0.15rem solid $input-field-border;
+        color: $muted-text;
+        display: flex;
+        justify-content: center;
         padding: 1rem;
+        width: 50%;
+        &--account {
+            border-radius: 0.2rem 0rem 0rem 0rem;
+        }
+        &--settings {
+            border-radius: 0rem 0.2rem 0rem 0rem;
+        }
+        &--active {
+            background: $active-menu-background;
+            border-bottom: 0.15rem solid $primary-highlight;
+            color: $primary-text;
+        }
     }
     &__account-tab-container {
         display: flex;
@@ -18,7 +38,15 @@
     &__settings-tab-container {
         display: flex;
     }
-    &__account-tab-icon, &__settings-tab-icon {
+    &__tab-icon {
+        color: $muted-text;
         height: 1rem;
-      }
+        margin-right: 0.75rem;
+        &--active {
+            color: $primary-text;
+        }
+    }
+    &__account-tab-text, &__settings-tab-text {
+        text-transform: capitalize;
+    }
 }
