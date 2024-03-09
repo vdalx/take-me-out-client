@@ -5,12 +5,10 @@
 .landing-page {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
-    width: 100vw;
     &__background-wrap {
         height: 100%;
-        position: relative;
         width: 100%;
         &:before {
             content: '';

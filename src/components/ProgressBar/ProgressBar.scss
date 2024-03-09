@@ -1,0 +1,24 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+.progress-bar {
+    width: 200px;
+    margin-top: 200px;
+    &__container {
+        width: 100px;
+        height: 30px;
+        border-radius: 10px;
+        background-color: $secondary-highlight;
+        margin-bottom: 10px;
+    }
+    &__fill {
+        height: 100%;
+        border-radius: 10px;
+        background-color: $primary-highlight;
+        transition: width 0.5s ease-out;
+    }
+    &__label {
+        margin-top: 10px;
+    }
+}
