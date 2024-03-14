@@ -1,6 +1,7 @@
 import './EventCardSmall.scss';
 import EventImg from '../../assets/images/chris-zhang-uGh-hHVPRYI-unsplash.jpg';
 import ProgressBar from '../ProgressBar';
+import EventBadge from '../EventBadge';
 
 const EventCardSmall = () => {
     return (
@@ -23,10 +24,12 @@ const EventCardSmall = () => {
                 </div>
                 <div className='event-card-small__event-status-container'>
                     <div className='event-card-small__event-sellthru'>
-                        <ProgressBar/>
+                        <ProgressBar sellThru={90}/>
                     </div>
-                    <div className='event-card-small__event-cost'>
-
+                    <div className='event-card-small__event-state'>
+                        <EventBadge
+                            badgeType='saved'
+                        />
                     </div>
                 </div>
             </div>

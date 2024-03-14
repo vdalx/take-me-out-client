@@ -3,22 +3,24 @@
 @use '../../styles/partials/mixins' as *;
 
 .progress-bar {
-    width: 200px;
-    margin-top: 200px;
+    display: flex;
+    align-items: center;
     &__container {
-        width: 100px;
-        height: 30px;
-        border-radius: 10px;
-        background-color: $secondary-highlight;
-        margin-bottom: 10px;
+        flex: 1;
+        height: 1rem;
+        border: 0.0625rem solid $primary-outline;
+        border-radius: 0.25rem;
+        background-color: $primary-background;
+        overflow: hidden;
     }
     &__fill {
+        color: white;
         height: 100%;
-        border-radius: 10px;
-        background-color: $primary-highlight;
+        background: linear-gradient(90deg, $tertiary-highlight, $primary-highlight);
         transition: width 0.5s ease-out;
     }
-    &__label {
-        margin-top: 10px;
+    &__value {
+        margin-left: 0.5rem;
+        text-align: right;
     }
 }

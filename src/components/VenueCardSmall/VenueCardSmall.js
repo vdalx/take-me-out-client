@@ -11,7 +11,7 @@ const VenueCardSmall = () => {
             </div>
             <div className='venue-card-small__venue-info-container'>
                 <div className='venue-card-small__venue-details-container'>
-                    <h3 className='venue-card-small__vanue-name'>Venue Name</h3>
+                    <h3 className='venue-card-small__venue-name'>Venue Name</h3>
                     <p className='venue-card-small__venue-address'>178 Victoria Street, Toronto</p>
                     <p className='venue-card-small__venue-rating'>Excellent</p>
                 </div>
