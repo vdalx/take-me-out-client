@@ -6,12 +6,12 @@ import mapboxgl from 'mapbox-gl';
 const EventMap = () => {
     const { REACT_APP_MAPBOX_ACCESS_TOKEN } = process.env;
     mapboxgl.accessToken = REACT_APP_MAPBOX_ACCESS_TOKEN;
-    
+
     const mapContainer = useRef(null);
     const map = useRef(null);
-    const [lng, setLng] = useState(-70.9);
-    const [lat, setLat] = useState(42.35);
-    const [zoom, setZoom] = useState(9);
+    const [lng, setLng] = useState(0.0037);
+    const [lat, setLat] = useState(51.5033);
+    const [zoom, setZoom] = useState(12);
 
     useEffect(() => {
         if (map.current) return; // initialize map only once
