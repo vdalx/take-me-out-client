@@ -2,12 +2,7 @@
 @use '../../styles/partials/fonts' as *;
 @use '../../styles/partials/mixins' as *;
 
-.account-details {
-    &__container {
-        background: $card-background;
-        border-radius: 0.2rem;
-        margin: 1.25rem;
-    }
+.account-menu {
     &__menu {
         display: flex;
         justify-content: space-evenly;

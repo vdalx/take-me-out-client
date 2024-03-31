@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import CreateAccountPage from './pages/CreateAccountPage';
 import LoginPage from './pages/LoginPage';
 import AccountPage from './pages/AccountPage';
+import AccountSettingsPage from './pages/AccountSettingsPage';
 import EventListingsPage from './pages/EventListingsPage';
 import EventPage from './pages/EventPage';
 import Header from './components/Header';
@@ -22,6 +23,7 @@ function App() {
         <Route path='/create-account' element={<CreateAccountPage/>} />
         <Route path='/login' element={<LoginPage/>} />
         <Route path='/account' element={<AccountPage/>} />
+        <Route path='/account/settings' element={<AccountSettingsPage/>} />
         <Route path='/event-list' element={<EventListingsPage/>} />
         <Route path='/event' element={<EventPage/>} />
       </Routes>
