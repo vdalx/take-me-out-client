@@ -1,9 +1,31 @@
 import './ProfileCard.scss';
+import { useEffect, useState } from 'react';
+import axiosInstance from '../../utils';
+import { getToken } from '../../tokenUtils';
+import { useNavigate, Link } from 'react-router-dom';
 import UserImg from '../../assets/images/user-photo-1633332755192-727a05c4013d.webp';
 import UserIcon from '../../assets/icons/user-solid.svg';
 import LocationIcon from '../../assets/icons/location-dot-solid.svg';
 
 const ProfileCard = () => {
+
+    const navigate = useNavigate();
+    const [profileData, setProfileData] = useState('');
+
+    useEffect(() => {
+        axiosInstance.get('/users/profile', getToken())
+            .then(result => {
+            setProfileData(result.data);
+            })
+            .catch(err => {
+            if (err.response.status === 401) {
+                navigate('/login');
+            }
+        });
+    },[navigate]);
+
+    console.log(profileData)
+
     return (
         <div className='profile-card'>
             <div className='profile-card__container'>

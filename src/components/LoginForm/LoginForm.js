@@ -74,7 +74,7 @@ const LoginForm = () => {
                  password: values.password
              }).then(result => {
                  setToken(result.data);
-                 const path = query.get('/login') || '/profile';
+                 const path = query.get('/login') || '/account';
                  navigate(path)
              }).catch(err => {
                  console.log(err);
