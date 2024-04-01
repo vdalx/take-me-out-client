@@ -14,7 +14,8 @@ const SignUpForm = () => {
     const initialValues = {
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        termsAccepted: false,
     };
 
     const [values, setValues] = useState(initialValues);
@@ -170,11 +171,12 @@ const SignUpForm = () => {
                             type='checkbox'
                             id='terms-conditions'
                             name='termsConditions'
-                            checked 
+                            checked={values.termsAccepted}
+                            onChange={handleInputChange}
                         />
                         <label 
                             className='signup-form__terms-checkbox-label'
-                            for='terms-conditions'>
+                            htmlFor='terms-conditions'>
                                 Accept all Terms & Conditions
                         </label>
                     </div>     
