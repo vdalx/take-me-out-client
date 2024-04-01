@@ -6,8 +6,19 @@ import userIcon from '../../assets/icons/user-solid.svg';
 import warningIcon from "../../assets/icons/error-24px.svg";
 import SubmitButton from '../SubmitButton';
 
-const AccountSettingsForm = ({ user }) => {
-    
+const AccountSettingsForm = ({}) => {
+
+   const user = {
+        "username": "example@email.com",
+        "firstName": null,
+        "lastName": null,
+        "email": "example@email.com",
+        "phone_number": null,
+        "location": null,
+        "created": "2024-04-01T03:44:24.000Z",
+        "modified": "2024-04-01T03:44:24.000Z"
+    }
+
     const apiUrl = process.env.REACT_APP_API_URL;
     const initialValues = {
         firstName: user.first_name,
