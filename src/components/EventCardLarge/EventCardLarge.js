@@ -8,8 +8,8 @@ import EventMap from '../EventMap';
 const EventCardLarge = () => {
     return (
         <div className='event-card-large'>
-            <div className='event-card-large__hero-img-container'>
-                <div>
+            <div className='event-card-large__hero-container'>
+                <div className='event-card-large__hero-img-container'>
                     <img className='event-card-large__hero-img' src={EventImg} alt='Venue of the event'/>
                 </div>
             </div>
@@ -35,7 +35,7 @@ const EventCardLarge = () => {
                     </div>
                 </div>
                 <div className='event-card-large__event-desc-container'>
-                    <p className='event-card-large__event-desc'>Toronto</p>
+                    <p className='event-card-large__event-desc'>Ivy blends pop, rock, folk, and a sprinkle of magic into enchanting melodies. Her ethereal voice transports listeners to whimsical realms, promising a spellbinding experience that lingers.</p>
                 </div>
                 <div className='event-card-large__event-tickets'>
                     <PrimaryButton 

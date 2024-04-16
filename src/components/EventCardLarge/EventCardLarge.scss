@@ -13,18 +13,23 @@
     @include desktop {
         margin: 4rem;
     }
+    &__hero-container {
+        align-items: center;
+        background-color: $tertiary-background;
+        display: flex;
+    }
     &__hero-img-container {
         align-items: center;
         background-color: $tertiary-background;
         display: flex;
         flex-direction: row;
-        height: 5.7rem;
+        height: 6.3125rem;
         justify-content: center;
         overflow: hidden;
         width: 100%;
     }
     &__hero-img {
-        object-fit: contain;
+        object-fit: cover;
         height: 100%;
         width: 100%;
     }
@@ -48,6 +53,16 @@
     }
     &__event-sellthru {
         width: 65%;
+    }
+    &__event-desc-container {
+        min-height: 20vh;
+        margin: 1.25rem 0rem 1.25rem 0rem;
+    }
+    &__event-tickets {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin: 1.5rem 0rem 1.5rem 0rem;
     }
     &__btn {
         background-color: $type-one-btn;
