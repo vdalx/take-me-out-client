@@ -1,0 +1,26 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    &__container {
+        flex: 1;
+        height: 1rem;
+        border: 0.0625rem solid $primary-outline;
+        border-radius: 0.25rem;
+        background-color: $primary-background;
+        overflow: hidden;
+    }
+    &__fill {
+        color: white;
+        height: 100%;
+        background: linear-gradient(90deg, $tertiary-highlight, $primary-highlight);
+        transition: width 0.5s ease-out;
+    }
+    &__value {
+        margin-left: 0.5rem;
+        text-align: right;
+    }
+}
