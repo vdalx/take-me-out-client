@@ -8,4 +8,9 @@
     flex-direction: column;
     min-height: 100vh;
     position: relative;
+    &__container {
+        background: $card-background;
+        border-radius: 0.2rem;
+        margin: 1.25rem;
+    }
 }

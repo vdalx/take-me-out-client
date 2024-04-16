@@ -6,7 +6,7 @@ import userIcon from '../../assets/icons/user-solid.svg';
 import warningIcon from "../../assets/icons/error-24px.svg";
 import SubmitButton from '../SubmitButton';
 
-const AccountSettingsForm = ({}) => {
+const AccountSettingsForm = () => {
 
    const user = {
         "username": "example@email.com",
@@ -194,10 +194,10 @@ const AccountSettingsForm = ({}) => {
                             </div>
                         </div>
                     )}
-                        <div className='account-settings__submit'>
+                        <div className='account-settings__submit-btn-container'>
                             <SubmitButton 
-                                className='signup-form__btn signup-form__btn--submit'
-                                formName='user-signup-form' 
+                                className='account-settings__btn account-settings__btn--submit'
+                                formName='account-settings-form' 
                                 btnText='submit' 
                                 btnValue='submit'
                             />

@@ -7,6 +7,9 @@
         display: flex;
         justify-content: space-evenly;
     }
+    &__item-link {
+        text-decoration: none;
+    }
     &__menu-tab {
         background: $primary-background;
         border-bottom: 0.15rem solid $input-field-border;
