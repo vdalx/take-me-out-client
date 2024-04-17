@@ -9,6 +9,7 @@ import AccountPage from './pages/AccountPage';
 import AccountSettingsPage from './pages/AccountSettingsPage';
 import EventListingsPage from './pages/EventListingsPage';
 import EventPage from './pages/EventPage';
+import VenuePage from './pages/VenuePage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/account/settings' element={<AccountSettingsPage/>} />
         <Route path='/event-list' element={<EventListingsPage/>} />
         <Route path='/event' element={<EventPage/>} />
+        <Route path='/venues' element={<VenuePage/>} />
       </Routes>
       <Footer />
       </BrowserRouter>
