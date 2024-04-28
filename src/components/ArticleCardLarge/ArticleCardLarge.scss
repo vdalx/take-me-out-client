@@ -2,7 +2,7 @@
 @use '../../styles/partials/fonts' as *;
 @use '../../styles/partials/mixins' as *;
 
-.article-card {
+.article-card-large {
     background-color: $form-background;
     border-radius: 0.2rem;
     box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.10);

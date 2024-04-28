@@ -1,14 +1,21 @@
 import './ArticleListContainer.scss';
-import ArticleCard from '../ArticleCard';
+import ArticleCardSmall from '../ArticleCardSmall';
 
-const ArticleListContainer = ({ articleListTitle }) => {
+const ArticleListContainer = ({ articleListTitle, postList }) => {
     return (
         <div className='article-list-container'>
             <div className='article-list-container__title-wrap'>
                 <h2 className='article-list-container__title-text'>{articleListTitle}</h2>
             </div>
             <div className='article-list-container__card-wrap'>
-                <ArticleCard />
+                {postList &&
+                    postList.map(post =>
+                        <ArticleCardSmall
+                            key={post.id}
+                            post={post}
+                        />
+                    )
+                }
             </div>
         </div>
     )
