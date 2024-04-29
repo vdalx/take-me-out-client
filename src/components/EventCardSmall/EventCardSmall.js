@@ -1,38 +1,43 @@
 import './EventCardSmall.scss';
-import EventImg from '../../assets/images/chris-zhang-uGh-hHVPRYI-unsplash.jpg';
+import { Link } from 'react-router-dom';
 import ProgressBar from '../ProgressBar';
 import EventBadge from '../EventBadge';
 
-const EventCardSmall = () => {
+const EventCardSmall = ({ event }) => {
     return (
         <div className='event-card-small'>
-            <div className='event-card-small__hero-img-container'>
-                <div>
-                    <img className='event-card-small__hero-img' src={EventImg} alt='Venue of the event'/>
-                </div>
-            </div>
-            <div className='event-card-small__event-container'>
-                <div className='event-card-small__event-details'>
-                    <div className='event-card-small__event-info-container'>
-                        <h3 className='event-card-small__event-name'>an event</h3>
-                        <p className='event-card-small__event-venue'>massey hall</p>
-                        <p className='event-card-small__event-location'>Toronto</p>
-                    </div>
-                    <div className='event-card-small__event-date-container'>
-                        <p className='event-card-small__event-date'>Sept 5 2024</p>
+            <Link
+                to={`/events/${event.id}`}
+                style={{ textDecoration: 'none' }}
+            >
+                <div className='event-card-small__hero-img-container'>
+                    <div>
+                        <img className='event-card-small__hero-img' src={event.image} alt='Venue of the event'/>
                     </div>
                 </div>
-                <div className='event-card-small__event-status-container'>
-                    <div className='event-card-small__event-sellthru'>
-                        <ProgressBar sellThru={90}/>
+                <div className='event-card-small__event-container'>
+                    <div className='event-card-small__event-details'>
+                        <div className='event-card-small__event-info-container'>
+                            <h3 className='event-card-small__event-name'>{event.event_name}</h3>
+                            <p className='event-card-small__event-venue'>{event.venue_name}</p>
+                            <p className='event-card-small__event-location'>{event.city}</p>
+                        </div>
+                        <div className='event-card-small__event-date-container'>
+                            <p className='event-card-small__event-date'>{event.date.substring(0, 10)}</p>
+                        </div>
                     </div>
-                    <div className='event-card-small__event-state'>
-                        <EventBadge
-                            badgeType='saved'
-                        />
+                    <div className='event-card-small__event-status-container'>
+                        <div className='event-card-small__event-sellthru'>
+                            <ProgressBar sellThru={event.sell_through}/>
+                        </div>
+                        <div className='event-card-small__event-state'>
+                            <EventBadge
+                                badgeType='saved'
+                            />
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Link>
         </div>
     )
 }

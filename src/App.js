@@ -22,13 +22,13 @@ function App() {
       <Routes>
         <Route path='/' element={<LandingPage/>} />
         <Route path='/home' element={<HomePage/>} />
-        <Route path='/post/:postId' element={<ArticlePage/>} />
+        <Route path='/posts/:postId' element={<ArticlePage/>} />
         <Route path='/create-account' element={<CreateAccountPage/>} />
         <Route path='/login' element={<LoginPage/>} />
         <Route path='/account' element={<AccountPage/>} />
         <Route path='/account/settings' element={<AccountSettingsPage/>} />
-        <Route path='/event-list' element={<EventListingsPage/>} />
-        <Route path='/event' element={<EventPage/>} />
+        <Route path='/events' element={<EventListingsPage/>} />
+        <Route path='/events/:eventId' element={<EventPage/>} />
         <Route path='/venues' element={<VenuePage/>} />
       </Routes>
       <Footer />
