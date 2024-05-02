@@ -1,10 +1,15 @@
 import './EventCardLarge.scss';
+import { useContext } from 'react';
 import ProgressBar from '../ProgressBar';
 import EventBadge from '../EventBadge';
 import PrimaryButton from '../PrimaryButton';
 import EventMap from '../EventMap';
+import { EventContext } from '../../pages/EventPage/EventPage';
 
-const EventCardLarge = ({ event }) => {
+const EventCardLarge = () => {
+
+    const event = useContext(EventContext);
+
     return (
         <div className='event-card-large'>
             <div className='event-card-large__hero-container'>

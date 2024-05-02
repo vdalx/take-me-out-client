@@ -1,35 +1,46 @@
 import './EventMap.scss';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axiosInstance from '../../utils';
 import mapboxgl from 'mapbox-gl';
 
-const EventMap = ({ longitude, latitude }) => {
-    const { REACT_APP_MAPBOX_ACCESS_TOKEN } = process.env;
-    mapboxgl.accessToken = REACT_APP_MAPBOX_ACCESS_TOKEN;
+const EventMap = () => {
 
-    const mapContainer = useRef(null);
-    const map = useRef(null);
-    const [lng, setLng] = useState('');
-    const [lat, setLat] = useState('');
-    const [zoom, setZoom] = useState(12);
+  const { eventId } = useParams();
+  const { REACT_APP_MAPBOX_ACCESS_TOKEN } = process.env;
+  mapboxgl.accessToken = REACT_APP_MAPBOX_ACCESS_TOKEN;
 
-    // must redo this to check for data first
+  const zoom = 13;
 
-    useEffect(() => {
-        if (map.current) return; // initialize map only once
-        map.current = new mapboxgl.Map({
-          container: mapContainer.current,
-          style: 'mapbox://styles/mapbox/streets-v12',
-          center: [lng, lat],
-          zoom: zoom
-        });
-      });
-    
-    return (
-        <div className='event-map'>
-            <div ref={mapContainer} className='event-map__map-container'></div>
-        </div>
-    )
+  const mapContainer = useRef(null);
+  const eventMap = useRef(null);
+
+  useEffect(() => {
+        axiosInstance.get(`/events/${eventId}`)
+      .then(result => {
+          const longitude = result.data.longitude;
+          const latitude = result.data.latitude;
+
+          if (!eventMap.current) {
+          eventMap.current = new mapboxgl.Map({
+            container: mapContainer.current,
+            style: 'mapbox://styles/mapbox/streets-v12',
+            center: [longitude, latitude],
+            zoom: zoom
+          });
+        }
+      })
+      .catch(err => {
+          console.log(err)
+      })
+  },[eventId, zoom]);
+
+  return (
+    <div className='event-map'>
+        <div ref={mapContainer} className='event-map__map-container'></div>
+    </div>
+  )
 }
 
 export default EventMap;
