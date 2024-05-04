@@ -8,7 +8,7 @@
     box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.10);
     margin: 1.25rem;
     @include tablet {
-        margin: 1.75rem;
+        margin: 2.5rem;
     }
     @include desktop {
         margin: 4rem;
@@ -27,6 +27,12 @@
         justify-content: center;
         overflow: hidden;
         width: 100%;
+        @include tablet {
+            height: 13rem;
+        }
+        @include desktop {
+            height: 20rem;
+        }
     }
     &__hero-img {
         object-fit: cover;
@@ -35,16 +41,25 @@
     }
     &__event-container {
         padding: 1rem;
+        @include tablet {
+            padding: 3rem;
+        }
+        @include desktop {
+            padding: 4rem;
+        }
     }
     &__event-details {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 0.25rem;
+        @include tablet {
+            margin-bottom: 0.5rem
+        }
     }
     &__event-name {
         color: $tertiary-text;
-        font-size: 1rem;
-        font-weight: 600;
         text-transform: capitalize;
+        margin-bottom: 0.5rem;
     }
     &__event-status-container {
         align-items: center;
@@ -68,5 +83,10 @@
         background-color: $type-one-btn;
         border: 0.0625rem solid $type-one-btn-border;
         color: $type-one-btn-text;
+    }
+    &__progress-bar-container {
+        @include tablet{
+            height: 2rem;
+        }
     }
 }

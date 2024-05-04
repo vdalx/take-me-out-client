@@ -1,32 +1,38 @@
 import './EventCardLarge.scss';
-import EventImg from '../../assets/images/chris-zhang-uGh-hHVPRYI-unsplash.jpg';
+import { useContext } from 'react';
+import { EventContext } from '../../pages/EventPage/EventPage';
 import ProgressBar from '../ProgressBar';
 import EventBadge from '../EventBadge';
 import PrimaryButton from '../PrimaryButton';
 import EventMap from '../EventMap';
 
 const EventCardLarge = () => {
+
+    const event = useContext(EventContext);
+
     return (
         <div className='event-card-large'>
             <div className='event-card-large__hero-container'>
                 <div className='event-card-large__hero-img-container'>
-                    <img className='event-card-large__hero-img' src={EventImg} alt='Venue of the event'/>
+                    <img className='event-card-large__hero-img' src={event.image} alt='Venue of the event'/>
                 </div>
             </div>
             <div className='event-card-large__event-container'>
                 <div className='event-card-large__event-details'>
                     <div className='event-card-large__event-info-container'>
-                        <h3 className='event-card-large__event-name'>an event</h3>
-                        <p className='event-card-large_event-venue'>massey hall</p>
-                        <p className='event-card-large__event-location'>Toronto</p>
+                        <h3 className='event-card-large__event-name'>{event.event_name}</h3>
+                        <p className='event-card-large_event-venue'>{event.venue_name}</p>
+                        <p className='event-card-large__event-location'>{`${event.address}, ${event.city}`}</p>
                     </div>
                     <div className='event-card-large__event-date-container'>
-                        <p className='event-card-large__event-date'>Sept 5 2024</p>
+                        <p className='event-card-large__event-date'>{event.date ? event.date.substring(0,10) : ''}</p>
                     </div>
                 </div>
                 <div className='event-card-large__event-status-container'>
                     <div className='event-card-large__event-sellthru'>
-                        <ProgressBar sellThru={90}/>
+                        <ProgressBar
+                            className='event-card-large__progress-bar-container'
+                        />
                     </div>
                     <div className='event-card-large__event-state'>
                         <EventBadge
@@ -35,7 +41,7 @@ const EventCardLarge = () => {
                     </div>
                 </div>
                 <div className='event-card-large__event-desc-container'>
-                    <p className='event-card-large__event-desc'>Ivy blends pop, rock, folk, and a sprinkle of magic into enchanting melodies. Her ethereal voice transports listeners to whimsical realms, promising a spellbinding experience that lingers.</p>
+                    <p className='event-card-large__event-desc'>{event.description}</p>
                 </div>
                 <div className='event-card-large__event-tickets'>
                     <PrimaryButton 

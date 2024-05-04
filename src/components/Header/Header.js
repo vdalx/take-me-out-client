@@ -21,7 +21,7 @@ const Header = () => {
                             </Link>
                         </li>
                         <li className='header__nav-list-item'>
-                            <Link to='/event-list' style={{ textDecoration: 'none' }}>
+                            <Link to='/events' style={{ textDecoration: 'none' }}>
                                 <span className='header__nav-list-item-text'>
                                     Events
                                 </span>
