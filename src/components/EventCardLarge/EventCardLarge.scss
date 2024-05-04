@@ -51,6 +51,10 @@
     &__event-details {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 0.25rem;
+        @include tablet {
+            margin-bottom: 0.5rem
+        }
     }
     &__event-name {
         color: $tertiary-text;
@@ -79,5 +83,10 @@
         background-color: $type-one-btn;
         border: 0.0625rem solid $type-one-btn-border;
         color: $type-one-btn-text;
+    }
+    &__progress-bar-container {
+        @include tablet{
+            height: 2rem;
+        }
     }
 }

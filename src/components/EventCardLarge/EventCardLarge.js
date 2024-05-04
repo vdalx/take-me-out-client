@@ -9,7 +9,7 @@ import EventMap from '../EventMap';
 const EventCardLarge = () => {
 
     const event = useContext(EventContext);
-    
+
     return (
         <div className='event-card-large'>
             <div className='event-card-large__hero-container'>
@@ -30,7 +30,9 @@ const EventCardLarge = () => {
                 </div>
                 <div className='event-card-large__event-status-container'>
                     <div className='event-card-large__event-sellthru'>
-                        <ProgressBar />
+                        <ProgressBar
+                            className='event-card-large__progress-bar-container'
+                        />
                     </div>
                     <div className='event-card-large__event-state'>
                         <EventBadge
