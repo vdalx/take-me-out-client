@@ -19,7 +19,7 @@ const EventListingsPage = () => {
 
     return (
         <div className='event-listings-page'>
-            <EventListContainer events={eventList}/>
+            <EventListContainer events={eventList} eventListTitle={`Events`}/>
         </div>
     )
 }
