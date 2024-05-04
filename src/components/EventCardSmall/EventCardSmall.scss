@@ -8,7 +8,7 @@
     box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.10);
     margin: 1.25rem;
     @include tablet {
-        flex-basis: 21rem;
+        flex-basis: 23rem;
     }
     @include desktop {
         margin: 1.25rem;
@@ -22,6 +22,9 @@
         justify-content: center;
         overflow: hidden;
         width: 100%;
+        @include tablet {
+            height: 8.7rem;
+        }
     }
     &__hero-img {
         object-fit: contain;
@@ -32,14 +35,23 @@
         padding: 1rem;
     }
     &__event-details {
+        align-items: flex-start;
         display: flex;
         justify-content: space-between;
     }
     &__event-name {
         color: $tertiary-text;
-        font-size: 1rem;
-        font-weight: 600;
         text-transform: capitalize;
+        font-size: 1.25rem;
+        margin-bottom: 0.25rem;
+    }
+    &__event-venue, &__event-location {
+        font-size: 1.15rem;
+    }
+    &__event-date {
+        font-size: 1.15rem;
+        line-height: 2.5rem;
+        margin-bottom: 0.25rem;
     }
     &__event-status-container {
         align-items: center;
