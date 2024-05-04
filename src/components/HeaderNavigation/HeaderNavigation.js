@@ -1,43 +1,74 @@
 import './HeaderNavigation.scss';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import ProfileIcon from '../ProfileIcon';
 
 const HeaderNavigation = () => {
 
-    const pageLinks = {
-        events: '/events',
-        posts: '/home',
-        profile: '/account'
+    const menuItems = [
+        {
+            id: '1',
+            title: 'Home',
+            url: '/home',
+            cName: 'links',
+            cFlag: 'home'
+        },
+        {
+            id: '2',
+            title: 'Events',
+            url: '/events',
+            cName: 'links',
+            cFlag: 'events'
+        },
+        {
+            id: '3',
+            title: 'Profile',
+            url: '/account',
+            cName: 'links',
+            cFlag: 'profile'
+        },
+    ]
+
+    const [menuIconClicked, setMenuIconClicked] = useState(false);
+
+    const handleClick = () => {
+        setMenuIconClicked(!menuIconClicked)
     }
-
-    const [menuOpen, setMenuOpen] = useState(false);
-
 
     return (
         <nav className='header-nav'>
-            <div className='header-nav__title-wrap'>
-                <Link to='/' >
-                    <h1 className='header-nav__title'>take me 
-                        <span className='header-nav__title--bold'> out</span>
-                    </h1>
-                </Link>
+            <Link to='/' className='header-nav__logo'>
+                <h1 className='header-nav__title'>take me 
+                    <span className='header-nav__title--bold'> out</span>
+                </h1>
+            </Link>
+            <div className='header-nav__menu-icon' onClick={handleClick}>
+                {menuIconClicked ?
+                    <FontAwesomeIcon icon={faXmark} /> :
+                    <FontAwesomeIcon icon={faBars} />
+                }
             </div>
-            <div className='header-nav__menu' onClick={() => setMenuOpen(!menuOpen)}>
-                <span className='header-nav__line'></span>
-                <span className='header-nav__line'></span>
-                <span className='header-nav__line'></span>
-            </div>
-            <ul className={`header-nav__links ${menuOpen ? 'header-nav__links--open' : ''}`}>
-                <li className='header-nav__item'>
-                    <NavLink to={pageLinks.posts}>Home</NavLink>
-                </li>
-                <li className='header-nav__item'>
-                    <NavLink to={pageLinks.events}>Events</NavLink>
-                </li>
-                <li className='header-nav__item header-nav__item--profile'>
-                    <NavLink to={pageLinks.profile}>Profile</NavLink>
-                </li>
+            <ul className={`${menuIconClicked ?
+                    'header-nav__menu header-nav__menu--active' : 
+                    'header-nav__menu'
+                }`}
+            >
+                {menuItems.map((item) => {
+                    return (
+                        <li
+                            key={item.id}
+                            className={`header-nav__${item.cName} header-nav__${item.cName}--${item.cFlag}`}
+                        >
+                            <NavLink to={item.url} className={`header-nav__${item.cName}-url`}>
+                                {item.title}
+                            </NavLink>
+                        </li>
+                    )
+                })
+                }
             </ul>
             <div className='header-nav__profile-icon'>
                 <ProfileIcon />
