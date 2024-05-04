@@ -1,0 +1,98 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+.active {
+    background-color: #1d4ed8;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: $primary-background;
+    margin: 0;
+    padding: 0.75rem 1.5rem;
+    @include desktop {
+        align-items: center;
+        background-color: $primary-background;
+        flex-direction: row;
+    }
+    &__title-wrap {
+        a {
+            text-decoration: none;
+        }
+    }
+    &__title {
+        text-shadow: -1.5px -1.5px 0 #FFFFFF, 1.5px -1.5px 0 #FFFFFF, -1.5px 1.5px 0 #FFFFFF, 1.5px 1.5px 0 #FFFFFF;
+        text-transform: capitalize;
+        white-space: nowrap;
+        &--bold {
+            color: $tertiary-text;
+        }
+    }
+    &__menu {
+        display: flex;
+        position: absolute;
+        top: 0.75rem;
+        right: 0.5rem;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 2.25rem;
+        height: 2rem;
+        @include desktop {
+            display: none
+        }
+    }
+    &__line {
+        height: 0.4rem;
+        width: 100%;
+        background-color: $secondary-background;
+        border-radius: 0.2rem;
+    }
+    &__links {
+        background-color: $secondary-background;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 0.25rem;
+        &--open {
+            display: flex;
+        }
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+    &__item {
+        list-style-type: none;
+        width: 100%;
+        text-align: center;
+        a {
+            display: block;
+            text-decoration: none;
+            color: $secondary-text;
+            margin: 0.2rem 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            &:not(.active):hover {
+                background-color: #172554;
+            }
+            @include desktop {
+                color: $primary-text;
+                margin: 0 0.5rem;
+            }
+        }
+        &--profile {
+            @include desktop {
+                display: none;
+            }
+        }
+    }
+    &__profile-icon {
+        display: none;
+        @include desktop {
+            display: flex;
+        }
+    }
+}
