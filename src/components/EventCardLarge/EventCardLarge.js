@@ -1,15 +1,15 @@
 import './EventCardLarge.scss';
 import { useContext } from 'react';
+import { EventContext } from '../../pages/EventPage/EventPage';
 import ProgressBar from '../ProgressBar';
 import EventBadge from '../EventBadge';
 import PrimaryButton from '../PrimaryButton';
 import EventMap from '../EventMap';
-import { EventContext } from '../../pages/EventPage/EventPage';
 
 const EventCardLarge = () => {
 
     const event = useContext(EventContext);
-
+    
     return (
         <div className='event-card-large'>
             <div className='event-card-large__hero-container'>
@@ -22,15 +22,15 @@ const EventCardLarge = () => {
                     <div className='event-card-large__event-info-container'>
                         <h3 className='event-card-large__event-name'>{event.event_name}</h3>
                         <p className='event-card-large_event-venue'>{event.venue_name}</p>
-                        <p className='event-card-large__event-location'>{event.city}</p>
+                        <p className='event-card-large__event-location'>{`${event.address}, ${event.city}`}</p>
                     </div>
                     <div className='event-card-large__event-date-container'>
-                        <p className='event-card-large__event-date'>{event.date}</p>
+                        <p className='event-card-large__event-date'>{event.date ? event.date.substring(0,10) : ''}</p>
                     </div>
                 </div>
                 <div className='event-card-large__event-status-container'>
                     <div className='event-card-large__event-sellthru'>
-                        <ProgressBar sellThru={event.sell_through}/>
+                        <ProgressBar />
                     </div>
                     <div className='event-card-large__event-state'>
                         <EventBadge
@@ -49,10 +49,7 @@ const EventCardLarge = () => {
                     />
                 </div>
                 <div className='event-card-large__event-map'>
-                    <EventMap
-                        longitude={event.longitude}
-                        latitude={event.latitude}
-                    />
+                    <EventMap />
                 </div>
             </div>
         </div>

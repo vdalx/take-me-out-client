@@ -17,8 +17,6 @@ const EventListingsPage = () => {
     },[]
     );
 
-    console.log(eventList)
-
     return (
         <div className='event-listings-page'>
             <EventListContainer events={eventList}/>
