@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Take Me Out - An App for Events Near You
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An app that helps users discover events happening in their city by highlighting factors users prioritized as well as curated lists of things to do.
+The primary aim of the app is to simplify the discovery, planning and booking process for users looking to attend events with a focus on simplicity and clarity highlighting factors users prioritized such as location, pricing, and booking availability.
 
-## Available Scripts
+## Run Locally
 
-In the project directory, you can run:
+1. Upon cloning this repository you will need to run 'npm i' to install any dependencies
+2. You can find the server portion here [take-me-out-server](https://github.com/vdalx/take-me-out-server)
+3. Repeat step one for the server portion
+4. Create your .env files for the client and server - there is a sample.env file available in each for reference
+5. On the server side you will need to run migration and seed files
+6. The password must have at least 8 characters, one uppercase letter, one lowercase letter, one number and one special character
 
-### `npm start`
+## Screenshot
+![App Screenshot](./src//assets//screenshot//take-me-out-screenshot.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<div>
+    <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original-wordmark.svg" width="40" height="40"/>
+    <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original-wordmark.svg" width="40" height="40"/>
+    <img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" width="40" height="40"/>
+    <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" width="40" height="40"/>
+    <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" width="40" height="40"/>
+    <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" width="40" height="40"/>
+    <img src="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg" width="40" height="40"/>
+    <img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original-wordmark.svg" width="40" height="40"/>
+</div>
 
-### `npm test`
+## Lessons Learned
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+As a first 'blank canvas' project I tried to implement everything I had learned during my BrainStation adventure to varying levels of success.
 
-### `npm run build`
+From a UX Design persepective I learned two key lessons:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Start small with a clear concept of what you’re trying to achieve prior to beginning the user research process.
+2. When interviewing and testing you must restrain yourself from “helping” the user.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+From a Software Development perspective I learned two more key lessons:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Don't be afraid to ask questions. Looking for help when you're stuck isn't always a weakness and spending time trying to find a solution on your own isn't always a strength or the most productive use of your time.
+2. Gaps in knowledge and understanding. There are a number of concepts I need to spend more time learning and practising and this project helped me identify what those are.
 
-### `npm run eject`
+## Next Steps
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+At the moment this is a very basic app which doesn't capture all of the features I had originally envisaged. I would like to continue iterating on those features and make it function the way I had designed it.
