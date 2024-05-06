@@ -6,7 +6,7 @@ const ArticleCardSmall = ({ post }) => {
         <div className='article-card-small'>
             <Link
                 to={`/posts/${post.id}`}
-                style={{ textDecoration: 'none' }}
+                className='article-card-small__link'
             >
                 <div className='article-card-small__hero-img-container'>
                     <div>

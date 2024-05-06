@@ -4,11 +4,12 @@ import ProgressBar from '../ProgressBar';
 import EventBadge from '../EventBadge';
 
 const EventCardSmall = ({ event }) => {
+
     return (
         <div className='event-card-small'>
             <Link
                 to={`/events/${event.id}`}
-                style={{ textDecoration: 'none' }}
+                className='event-card-small__link'
             >
                 <div className='event-card-small__hero-img-container'>
                     <div>
@@ -32,7 +33,8 @@ const EventCardSmall = ({ event }) => {
                         </div>
                         <div className='event-card-small__event-state'>
                             <EventBadge
-                                badgeType='saved'
+                                badgeType='default'
+                                ticketPrice={event.ticket_price}
                             />
                         </div>
                     </div>

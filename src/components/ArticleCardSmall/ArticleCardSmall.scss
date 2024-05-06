@@ -13,6 +13,10 @@
     @include desktop {
         margin: 4rem;
     }
+    &__link {
+        color: $primary-text;
+        text-decoration: none;
+    }
     &__hero-img-container {
         align-items: center;
         background-color: $tertiary-background;
