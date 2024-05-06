@@ -7,6 +7,7 @@
     flex-direction: column;
     min-height: 100vh;
     position: relative;
+    background: $secondary-background;
     &__background-wrap {
         height: 100%;
         width: 100%;
@@ -19,7 +20,7 @@
             display: block;
             left: 0;
             height: 100%;
-            opacity: 0.5;
+            opacity: 0.85;
             position: absolute;
             top: 0;
             width: 100%;
@@ -35,24 +36,11 @@
         padding: 1rem;
         position: relative;
     }
-    &__title-wrap {
-        padding-top: 6rem;
-        @include desktop {
-            display: none;
-        }
-    }
-    &__title {
-        text-shadow: -1.5px -1.5px 0 #FFFFFF, 1.5px -1.5px 0 #FFFFFF, -1.5px 1.5px 0 #FFFFFF, 1.5px 1.5px 0 #FFFFFF;
-        text-transform: capitalize;
-        &--bold {
-            color: $tertiary-text;
-        }
-    }
     &__btn-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-top: 12rem;
+        margin-top: 10rem;
         @include desktop {
             background-color: rgba(251, 252, 252, 0.75);
             border-radius: 0.25rem;

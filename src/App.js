@@ -11,14 +11,14 @@ import ArticlePage from './pages/ArticlePage';
 import EventListingsPage from './pages/EventListingsPage';
 import EventPage from './pages/EventPage';
 import VenuePage from './pages/VenuePage';
-import Header from './components/Header';
+import HeaderNavigation from './components/HeaderNavigation';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Header />
+      <HeaderNavigation />
       <Routes>
         <Route path='/' element={<LandingPage/>} />
         <Route path='/home' element={<HomePage/>} />

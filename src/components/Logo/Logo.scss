@@ -1,0 +1,19 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+.logo {
+    &__container {
+        padding-top: 6rem;
+        @include desktop {
+            display: none;
+        }
+    }
+    &__title {
+        text-shadow: -1.5px -1.5px 0 #FFFFFF, 1.5px -1.5px 0 #FFFFFF, -1.5px 1.5px 0 #FFFFFF, 1.5px 1.5px 0 #FFFFFF;
+        text-transform: capitalize;
+        &--bold {
+            color: $tertiary-text;
+        }
+    }
+}
