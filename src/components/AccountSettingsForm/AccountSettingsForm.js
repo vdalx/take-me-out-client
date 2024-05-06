@@ -6,7 +6,7 @@ import userIcon from '../../assets/icons/user-solid.svg';
 import warningIcon from "../../assets/icons/error-24px.svg";
 import SubmitButton from '../SubmitButton';
 
-const AccountSettingsForm = () => {
+const AccountSettingsForm = ({ profileData }) => {
 
    const user = {
         "username": "example@email.com",
@@ -93,13 +93,13 @@ const AccountSettingsForm = () => {
                     >
                         <div className='account-settings__field-container'>
                             <label className='account-settings__form-label' htmlFor='firstName'>
-                                    First Name
+                                First Name
                             </label>
                             <input
                                 className='account-settings__form-input' 
                                 id='firstName'
                                 name='firstName'
-                                placeholder='First name'
+                                placeholder={profileData.firstName ? profileData.firstName : 'First Name'}
                                 type='text'
                                 value={values.firstName}
                                 onChange={handleInputChange}>
@@ -113,7 +113,7 @@ const AccountSettingsForm = () => {
                                 className='account-settings__form-input'
                                 id='lastName'
                                 name='lastName'
-                                placeholder='Last name'
+                                placeholder={profileData.lastName ? profileData.lastName : 'Last Name'}
                                 type='text'
                                 value={values.lastName}
                                 onChange={handleInputChange}>
@@ -127,7 +127,7 @@ const AccountSettingsForm = () => {
                                 className='account-settings__form-input'
                                 id='email'
                                 name='email'
-                                placeholder='Email'
+                                placeholder={profileData.email ? profileData.email : 'Email'}
                                 type='text'
                                 value={values.email}
                                 onChange={handleInputChange}>
@@ -141,7 +141,7 @@ const AccountSettingsForm = () => {
                                 className='account-settings__form-input'
                                 id='phoneNumber'
                                 name='phoneNumber'
-                                placeholder='Phone number'
+                                placeholder={profileData.phoneNumber ? profileData.phoneNumber : 'Phone Number'}
                                 type='text'
                                 value={values.phoneNumber}
                                 onChange={handleInputChange}>
@@ -155,7 +155,7 @@ const AccountSettingsForm = () => {
                                 className='account-settings__form-input'
                                 id='location'
                                 name='location'
-                                placeholder='Location'
+                                placeholder={profileData.location ? profileData.location : 'Location'}
                                 type='text'
                                 value={values.userLocation}
                                 onChange={handleInputChange}>

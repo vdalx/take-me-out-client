@@ -4,7 +4,7 @@ import UserIcon from '../../assets/icons/user-solid.svg';
 import SettingsIcon from '../../assets/icons/gear-solid.svg';
 
 const AccountMenu = () => {
-
+    
     const location = useLocation();
 
     const accountPageLinks = {

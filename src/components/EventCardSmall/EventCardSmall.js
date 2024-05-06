@@ -23,7 +23,7 @@ const EventCardSmall = ({ event }) => {
                             <p className='event-card-small__event-location'>{event.city}</p>
                         </div>
                         <div className='event-card-small__event-date-container'>
-                            <h3 className='event-card-small__event-date'>{event.date.substring(0, 10)}</h3>
+                            <p className='event-card-small__event-date'>{event.date.substring(0, 10)}</p>
                         </div>
                     </div>
                     <div className='event-card-small__event-status-container'>
