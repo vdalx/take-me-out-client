@@ -4,7 +4,7 @@
 
 .header-nav {
     background-color: $primary-background;
-    height: 4rem;
+    padding: 2rem 0rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,7 @@
     position: relative;
     @include tablet {
         position: static;
-        height: 5rem
+        padding: 1rem;
     }
     &__logo {
         color: $primary-text;
@@ -25,7 +25,6 @@
         text-decoration: none;
         cursor: pointer;
         @include tablet {
-            padding-top: 1rem;
             position: static;
             transform: none;
         }
@@ -50,7 +49,7 @@
         top: 4rem;
         left: -100%;
         opacity: 1;
-        transition: all 0.5s;
+        transition: all 0.5s ease;
         @include tablet {
             display: grid;
             grid-template-columns: repeat(3, auto);
@@ -78,20 +77,20 @@
         cursor: pointer;
         @include tablet {
             display: none;
+            position: static;
+            transform: none;
         }
     }
     &__links {
         padding: 2rem;
         width: 100%;
         display: table;
-        text-decoration: none;
         text-align: center;
         &:hover {
             background-color: rgba(251, 54, 64, 0.5);
             border-radius: 0rem;
             transition: all 0.2s ease-out;
             @include tablet {
-                background-color: rgba(251, 54, 64, 0.5);
                 border-radius: 0.25rem;
             }
         }
@@ -117,13 +116,14 @@
         display: none;
         @include tablet {
             display: block;
-            transition: all 0.5s;
+            transition: all 0.5s ease;
+            padding-right: 1.25rem;
         }
     }
 }
 
 .fa-bars {
-    color: $primary-text
+    color: $primary-text;
 }
 .fa-xmark {
     color: $primary-text;
