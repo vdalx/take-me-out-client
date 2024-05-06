@@ -13,7 +13,7 @@ The primary aim of the app is to simplify the discovery, planning and booking pr
 6. The password must have at least 8 characters, one uppercase letter, one lowercase letter, one number and one special character
 
 ## Screenshot
-![App Screenshot](./src/assets/screenshot/take-me-out-screenshot.png)
+![App Screenshot](./src/assets/screenshots/take-me-out-screenshot.png)
 
 ## Tech Stack
 
