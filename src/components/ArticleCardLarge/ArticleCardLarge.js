@@ -1,11 +1,12 @@
 import './ArticleCardLarge.scss';
 
 const ArticleCardLarge = ({ post }) => {
+    console.log(post)
     return(
         <div className='article-card-large'>
             <div className='article-card-large__hero-img-container'>
                 <div>
-                    <img className='article-card-large__hero-img' src={post.image} alt='Venue of the event'/>
+                    <img className='article-card-large__hero-img' src={post.post_image} alt='Venue of the event'/>
                 </div>
             </div>
             <div className='article-card-large__content-container'>
