@@ -13,7 +13,7 @@ const EventCardSmall = ({ event }) => {
             >
                 <div className='event-card-small__hero-img-container'>
                     <div>
-                        <img className='event-card-small__hero-img' src={event.image} alt='Venue of the event'/>
+                        <img className='event-card-small__hero-img' src={event.event_image} alt='Venue of the event'/>
                     </div>
                 </div>
                 <div className='event-card-small__event-container'>
@@ -21,10 +21,10 @@ const EventCardSmall = ({ event }) => {
                         <div className='event-card-small__event-info-container'>
                             <h3 className='event-card-small__event-name'>{event.event_name}</h3>
                             <p className='event-card-small__event-venue'>{event.venue_name}</p>
-                            <p className='event-card-small__event-location'>{event.city}</p>
+                            <p className='event-card-small__event-location'>{event.venue_city}</p>
                         </div>
                         <div className='event-card-small__event-date-container'>
-                            <p className='event-card-small__event-date'>{event.date.substring(0, 10)}</p>
+                            <p className='event-card-small__event-date'>{event.event_date.substring(0, 10)}</p>
                         </div>
                     </div>
                     <div className='event-card-small__event-status-container'>

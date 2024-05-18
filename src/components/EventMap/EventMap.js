@@ -19,8 +19,8 @@ const EventMap = () => {
   useEffect(() => {
         axiosInstance.get(`/events/${eventId}`)
       .then(result => {
-          const longitude = result.data.longitude;
-          const latitude = result.data.latitude;
+          const longitude = result.data.venue_longitude;
+          const latitude = result.data.venue_latitude;
 
           if (!eventMap.current) {
           eventMap.current = new mapboxgl.Map({
