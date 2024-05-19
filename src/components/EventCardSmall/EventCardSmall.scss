@@ -8,7 +8,7 @@
     box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.10);
     margin: 1.25rem;
     @include tablet {
-        flex-basis: 23rem;
+        flex-basis: 21rem;
     }
     @include desktop {
         margin: 1.25rem;
@@ -55,9 +55,6 @@
         text-transform: capitalize;
         font-size: 1.25rem;
         margin-bottom: 0.25rem;
-    }
-    &__event-venue, &__event-location {
-        font-size: 1.15rem;
     }
     &__event-status-container {
         align-items: center;
