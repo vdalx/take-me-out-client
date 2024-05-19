@@ -1,7 +1,7 @@
 import './ArticleCardLarge.scss';
+import EventCardSmall from '../EventCardSmall';
 
 const ArticleCardLarge = ({ post }) => {
-    console.log(post)
     return(
         <div className='article-card-large'>
             <div className='article-card-large__hero-img-container'>
@@ -16,6 +16,16 @@ const ArticleCardLarge = ({ post }) => {
                 <div className='article-card-large__body-container'>
                     <p className='article-card-large__body-container'>{post.post_body}</p>
                 </div>
+            </div>
+            <div className='event-list-container__card-wrap'>
+                {post.post_events &&
+                    post.post_events.map(event =>
+                        <EventCardSmall
+                            key={event.id}
+                            event={event}
+                        />
+                    )
+                }
             </div>
         </div>
     )

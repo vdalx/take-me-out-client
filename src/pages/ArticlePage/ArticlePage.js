@@ -8,6 +8,8 @@ const ArticlePage = () => {
     const { postId } = useParams();
     const [post, setPost] = useState('');
 
+    console.log(postId)
+
     useEffect(() => {
         axiosInstance.get(`/content/${postId}`)
         .then(result => {
@@ -18,6 +20,8 @@ const ArticlePage = () => {
         })
     },[postId]
     );
+
+    console.log(post)
 
     return (
         <div className='article-page'>

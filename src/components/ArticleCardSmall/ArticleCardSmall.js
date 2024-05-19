@@ -5,7 +5,7 @@ const ArticleCardSmall = ({ post }) => {
     return(
         <div className='article-card-small'>
             <Link
-                to={`/posts/${post.post_id}`}
+                to={`/posts/${post.id}`}
                 className='article-card-small__link'
             >
                 <div className='article-card-small__hero-img-container'>

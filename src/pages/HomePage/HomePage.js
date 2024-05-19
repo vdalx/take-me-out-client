@@ -17,6 +17,8 @@ const HomePage = () => {
     },[]
     );
 
+    console.log(contentData)
+
     return (
         <div className='home-page'>
             <ArticleListContainer

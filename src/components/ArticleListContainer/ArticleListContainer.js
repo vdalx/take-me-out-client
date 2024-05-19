@@ -11,7 +11,7 @@ const ArticleListContainer = ({ articleListTitle, postList }) => {
                 {postList &&
                     postList.map(post =>
                         <ArticleCardSmall
-                            key={post.post_id}
+                            key={post.id}
                             post={post}
                         />
                     )
