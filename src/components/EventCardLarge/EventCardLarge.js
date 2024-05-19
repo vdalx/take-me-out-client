@@ -14,7 +14,7 @@ const EventCardLarge = () => {
         <div className='event-card-large'>
             <div className='event-card-large__hero-container'>
                 <div className='event-card-large__hero-img-container'>
-                    <img className='event-card-large__hero-img' src={event.image} alt='Venue of the event'/>
+                    <img className='event-card-large__hero-img' src={event.event_image} alt='Venue of the event'/>
                 </div>
             </div>
             <div className='event-card-large__event-container'>
@@ -22,10 +22,10 @@ const EventCardLarge = () => {
                     <div className='event-card-large__event-info-container'>
                         <h3 className='event-card-large__event-name'>{event.event_name}</h3>
                         <p className='event-card-large_event-venue'>{event.venue_name}</p>
-                        <p className='event-card-large__event-location'>{`${event.address}, ${event.city}`}</p>
+                        <p className='event-card-large__event-location'>{`${event.venue_address}, ${event.venue_city}`}</p>
                     </div>
                     <div className='event-card-large__event-date-container'>
-                        <p className='event-card-large__event-date'>{event.date ? event.date.substring(0,10) : ''}</p>
+                        <p className='event-card-large__event-date'>{event.event_date ? event.event_date.substring(0,10) : ''}</p>
                     </div>
                 </div>
                 <div className='event-card-large__event-status-container'>
@@ -41,7 +41,7 @@ const EventCardLarge = () => {
                     </div>
                 </div>
                 <div className='event-card-large__event-desc-container'>
-                    <p className='event-card-large__event-desc'>{event.description}</p>
+                    <p className='event-card-large__event-desc'>{event.event_desc}</p>
                 </div>
                 <div className='event-card-large__event-tickets'>
                     <PrimaryButton 

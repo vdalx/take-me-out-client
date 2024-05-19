@@ -1,30 +1,9 @@
 import './ProfileCard.scss';
-import { useEffect, useState } from 'react';
-import axiosInstance from '../../utils';
-import { getToken } from '../../tokenUtils';
-import { useNavigate, Link } from 'react-router-dom';
 import UserImg from '../../assets/images/user-photo-1633332755192-727a05c4013d.webp';
 import UserIcon from '../../assets/icons/user-solid.svg';
 import LocationIcon from '../../assets/icons/location-dot-solid.svg';
 
-const ProfileCard = () => {
-
-    const navigate = useNavigate();
-    const [profileData, setProfileData] = useState('');
-
-    useEffect(() => {
-        axiosInstance.get('/users/profile', getToken())
-            .then(result => {
-            setProfileData(result.data);
-            })
-            .catch(err => {
-            if (err.response.status === 401) {
-                navigate('/login');
-            }
-        });
-    },[navigate]);
-
-    console.log(profileData)
+const ProfileCard = ({ firstName, lastName, location }) => {
 
     return (
         <div className='profile-card'>
@@ -36,13 +15,13 @@ const ProfileCard = () => {
                     <div className='profile-card__user-name-container'>
                         <img className='profile-card__user-icon' src={UserIcon} alt='An icon indicating a user profile'/>
                         <h3 className='profile-card__user-name'>
-                            daniel smith
+                            {`${firstName} ${lastName}`}
                         </h3>
                     </div>
                     <div className='profile-card__user-location-container'>
                         <img className='profile-card__location-icon' src={LocationIcon} alt='An icon indicating a location'/>
                         <h3 className='profile-card__location-name'>
-                            Toronto, ON
+                            {location}
                         </h3>
                     </div>
                     <div className='profile-card__edit-profile-prompt'>

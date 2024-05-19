@@ -6,11 +6,11 @@ const ArticleCardSmall = ({ post }) => {
         <div className='article-card-small'>
             <Link
                 to={`/posts/${post.id}`}
-                style={{ textDecoration: 'none' }}
+                className='article-card-small__link'
             >
                 <div className='article-card-small__hero-img-container'>
                     <div>
-                        <img className='article-card-small__hero-img' src={post.image} alt='Venue of the event'/>
+                        <img className='article-card-small__hero-img' src={post.post_image} alt='Venue of the event'/>
                     </div>
                 </div>
                 <div className='article-card-small__content-container'>

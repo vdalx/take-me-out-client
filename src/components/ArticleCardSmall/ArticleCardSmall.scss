@@ -8,10 +8,15 @@
     box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.10);
     margin: 1.25rem;
     @include tablet {
+        flex-basis: 23rem;
         margin: 1.75rem;
     }
     @include desktop {
-        margin: 4rem;
+        margin: 1.25rem;
+    }
+    &__link {
+        color: $primary-text;
+        text-decoration: none;
     }
     &__hero-img-container {
         align-items: center;
@@ -40,6 +45,5 @@
         font-size: 1rem;
         font-weight: 600;
         text-transform: capitalize;
-        text-decoration: none;
     }
 }
