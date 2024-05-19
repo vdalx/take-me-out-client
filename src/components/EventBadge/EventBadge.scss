@@ -17,6 +17,9 @@
         &--saved {
             background: $tertiary-highlight;
         }
+        &--confirmed {
+            background: $quarternary-highlight;
+        }
         &--default {
             background: $secondary-highlight;
         }

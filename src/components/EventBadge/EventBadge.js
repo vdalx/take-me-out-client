@@ -8,6 +8,8 @@ const EventBadge = ({ badgeType, ticketPrice }) => {
     const checkIconType = () => {
         if (badgeType === 'saved') {
             return checkMark;
+        } else if (badgeType === 'confirmed'){
+            return checkMark;
         } else if (badgeType === 'default'){
             return sterlingSign;
         }
@@ -17,7 +19,7 @@ const EventBadge = ({ badgeType, ticketPrice }) => {
         <div className='event-badge'>
             <div className='event-badge__container'>
                 <div className={`event-badge__img-container event-badge__img-container--${badgeType}`}>
-                    {badgeType === 'saved' ? 
+                    {badgeType === 'saved' || 'confirmed' ? 
                         <img className='event-badge__img' src={checkIconType()} alt='View of current user'/> :
                         <p className='event-badge__price'>{`£${ticketPrice}`}</p>
                     }
