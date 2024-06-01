@@ -71,7 +71,9 @@ const HeaderNavigation = () => {
                 }
             </ul>
             <div className='header-nav__profile-icon'>
-                <ProfileIcon />
+                <NavLink to='/account' className='header-nav__profile-icon-link'>
+                    <ProfileIcon />
+                </NavLink>
             </div>
         </nav>
     )
