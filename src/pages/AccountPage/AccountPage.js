@@ -32,7 +32,7 @@ const AccountPage = () => {
                     <ProfileCard
                         firstName={profileData.firstName}
                         lastName={profileData.lastName}
-                        location={profileData.location}
+                        userLocation={profileData.location}
                     />
                     <EventListContainer eventListTitle='Upcoming Events'/>
                     <EventListContainer eventListTitle='Saved Events'/>
