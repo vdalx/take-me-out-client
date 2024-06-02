@@ -3,8 +3,8 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import UserImg from '../../assets/images/user-photo-1633332755192-727a05c4013d.webp';
 import UserIcon from '../../assets/icons/user-solid.svg';
 import LocationIcon from '../../assets/icons/location-dot-solid.svg';
-import PrimaryButton from '../PrimaryButton';
-import LogoutIcon from '../../assets/icons/logout-icon.svg';
+import EditIcon from '../../assets/icons/edit-pen-regular.svg';
+import LogoutIcon from '../../assets/icons/logout-arrow-solid.svg';
 import { removeToken } from '../../tokenUtils';
 
 
@@ -21,7 +21,7 @@ const ProfileCard = ({ firstName, lastName, userLocation }) => {
 
     const handleLogout = async() => {
         await removeToken('token')
-        const path = query.get('/login') || '/account';
+        const path = query.get('/account') || '/login';
         navigate(path)
     }
 
@@ -47,20 +47,21 @@ const ProfileCard = ({ firstName, lastName, userLocation }) => {
                         </div>
                     </div>
                 </div>
-                <div className='profile-card__edit-profile-prompt'>
-                    <Link to={pageLinks.settings} className='profile-card__edit-btn-link'>
-                        <PrimaryButton
-                            className='profile-card__btn profile-card__btn--profile-edit'
-                            btnType='button'
-                            btnText='edit profile'
-                        />
+                <div className='profile-card__edit-logout-container'>
+                    <Link to={pageLinks.settings} className='profile-card__btn-link'>
+                    <div className='profile-card__btn-container profile-card__btn-container--edit'>
+                            <img className='profile-card__btn-icon' src={EditIcon} alt='Edit icon'/>
+                            <p className='profile-card__btn-title'>
+                                edit profile
+                            </p>
+                        </div>
                     </Link>
-                    <Link to={pageLinks.logout} className='profile-card__logout-link' onClick={handleLogout}>
-                        <div className='profile-card__logout-container'>
-                                <img className='profile-card__item-icon' src={LogoutIcon} alt='Logout icon'/>
-                                <p className='profile-card__item-title'>
-                                    Logout
-                                </p>
+                    <Link to={pageLinks.logout} className='profile-card__btn-link' onClick={handleLogout}>
+                        <div className='profile-card__btn-container profile-card__btn-container--logout'>
+                            <img className='profile-card__btn-icon' src={LogoutIcon} alt='Logout icon'/>
+                            <p className='profile-card__btn-title'>
+                                logout
+                            </p>
                         </div>
                     </Link>
                 </div>

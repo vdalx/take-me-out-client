@@ -56,12 +56,14 @@
     margin: 1.25rem 1.25rem 0.25rem 1.25rem;
   }
   &__user-name-container {
+    align-items: center;
     display: flex;
     justify-content:first baseline;
     margin-bottom: 0.5rem;
     width: 100%;
   }
   &__user-location-container {
+    align-items: center;
     display: flex;
     justify-content:first baseline;
     width: 100%;
@@ -73,19 +75,57 @@
     height: 1rem;
     margin-right: 1rem;
     text-align: left;
+    @include desktop {
+      height: 1.25rem;
+      margin-right: 1.25rem;
+    }
   }
-  &__edit-profile-prompt {
-    align-items: center;
+  &__edit-logout-container {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
   }
-  &__btn {
-    border: 0.0625rem solid $type-two-btn-border;
+  &__btn-container {
+    align-items: center;
     background-color: $type-two-btn;
+    border: 0.0625rem solid $type-two-btn-border;
+    border-radius: 0.25rem;
+    box-shadow: 0px 4px 5px 0px rgba(19,24,44,0.25);
     color: $type-two-btn-text;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0.25rem 1.25rem 0.25rem 0.25rem;
+    position: relative;
+    width: 10rem;
+    &--logout {
+      background-color: $type-one-btn;
+      border: 0.0625rem solid $type-one-btn-border;
+      color: $type-one-btn-text;
+      margin-top: 1rem;
+    }
+      @include tablet {
+        border-radius: 0.25rem;
+        box-shadow: 0px 4px 5px 0px rgba(19,24,44,0.25);
+        font-size: 1rem;
+        padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+        width: 12rem;
+    }
   }
-  &__edit-btn-link {
-    color: $tertiary-text;
+  &__btn-link {
+    color: $primary-text;
+    text-decoration: none;
+  }
+  &__btn-icon {
+    height: 1rem;
+    width: 15%;
+  }
+  &__btn-title {
+    font-size: 1rem;
     font-weight: 700;
     text-transform: capitalize;
+    width: 85%;
   }
 }
