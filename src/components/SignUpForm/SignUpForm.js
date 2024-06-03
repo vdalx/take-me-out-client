@@ -41,7 +41,6 @@ const SignUpForm = () => {
                 };
             });
         }
-        console.log(values)
     };
 
     const isEmailValid = (email) => {

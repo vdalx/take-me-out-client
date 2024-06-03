@@ -10,22 +10,22 @@ const AccountSettingsForm = ({ profileData }) => {
 
    const user = {
         "username": "example@email.com",
-        "firstName": null,
-        "lastName": null,
+        "firstName": "",
+        "lastName": "",
         "email": "example@email.com",
-        "phone_number": null,
-        "location": null,
-        "created": "2024-04-01T03:44:24.000Z",
-        "modified": "2024-04-01T03:44:24.000Z"
+        "phone_number": "",
+        "location": "",
+        "created": "",
+        "modified": ""
     }
 
     const apiUrl = process.env.REACT_APP_API_URL;
     const initialValues = {
-        firstName: user.first_name,
-        lastName: user.last_name,
+        firstName: user.firstName,
+        lastName: user.lastName,
         email: user.email,
         phoneNumber: user.phone_number,
-        location: user.userLocation,
+        location: user.location,
         avatar: user.avatar
     };
 
@@ -157,7 +157,7 @@ const AccountSettingsForm = ({ profileData }) => {
                                 name='location'
                                 placeholder={profileData.location ? profileData.location : 'Location'}
                                 type='text'
-                                value={values.userLocation}
+                                value={values.location}
                                 onChange={handleInputChange}>
                             </input>
                         </div>
