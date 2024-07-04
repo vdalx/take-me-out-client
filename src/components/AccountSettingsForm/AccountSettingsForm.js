@@ -8,29 +8,21 @@ import SubmitButton from '../SubmitButton';
 
 const AccountSettingsForm = ({ profileData }) => {
 
-   const user = {
-        "username": "example@email.com",
-        "firstName": "",
-        "lastName": "",
-        "email": "example@email.com",
-        "phone_number": "",
-        "location": "",
-        "created": "",
-        "modified": ""
-    }
-
     const apiUrl = process.env.REACT_APP_API_URL;
     const initialValues = {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        phoneNumber: user.phone_number,
-        location: user.location,
-        avatar: user.avatar
+        firstName: profileData.firstName,
+        lastName: profileData.lastName,
+        email: profileData.email,
+        phoneNumber: profileData.phone_number,
+        location: profileData.location,
+        avatar: profileData.avatar
     };
 
     const [values, setValues] = useState(initialValues);
     const [errMessage, setErrMessage] = useState('');
+
+    console.log('first',initialValues)
+    console.log('second', values)
 
     // Need to add Phone number regex
 
@@ -62,12 +54,15 @@ const AccountSettingsForm = ({ profileData }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log(e.target.firstName.value)
         if(isFormValid()) {
             axios.put(`${apiUrl}/users`, {
-                first_name: values.firstName,
-                last_name: values.lastName,
+                username: profileData.username,
+                firstName: values.firstName,
+                lastName: values.lastName,
                 email: values.email,
-                school: values.schoolName
+                phone_number: values.phone_number,
+                location: values.location,
             }).then(response => {
                 console.log(response.data);
                 toast.success("Successfully updated profile!")
@@ -101,7 +96,7 @@ const AccountSettingsForm = ({ profileData }) => {
                                 name='firstName'
                                 placeholder={profileData.firstName ? profileData.firstName : 'First Name'}
                                 type='text'
-                                value={values.firstName}
+                                value={values.firstName || ""}
                                 onChange={handleInputChange}>
                             </input>
                         </div>
@@ -115,7 +110,7 @@ const AccountSettingsForm = ({ profileData }) => {
                                 name='lastName'
                                 placeholder={profileData.lastName ? profileData.lastName : 'Last Name'}
                                 type='text'
-                                value={values.lastName}
+                                value={values.lastName || ""}
                                 onChange={handleInputChange}>
                             </input>
                         </div>
@@ -129,7 +124,7 @@ const AccountSettingsForm = ({ profileData }) => {
                                 name='email'
                                 placeholder={profileData.email ? profileData.email : 'Email'}
                                 type='text'
-                                value={values.email}
+                                value={values.email || ""}
                                 onChange={handleInputChange}>
                             </input>
                         </div>
@@ -143,7 +138,7 @@ const AccountSettingsForm = ({ profileData }) => {
                                 name='phoneNumber'
                                 placeholder={profileData.phoneNumber ? profileData.phoneNumber : 'Phone Number'}
                                 type='text'
-                                value={values.phoneNumber}
+                                value={values.phoneNumber || ""}
                                 onChange={handleInputChange}>
                             </input>
                         </div>
@@ -157,7 +152,7 @@ const AccountSettingsForm = ({ profileData }) => {
                                 name='location'
                                 placeholder={profileData.location ? profileData.location : 'Location'}
                                 type='text'
-                                value={values.location}
+                                value={values.location || ""}
                                 onChange={handleInputChange}>
                             </input>
                         </div>

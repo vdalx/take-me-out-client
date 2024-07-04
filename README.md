@@ -9,8 +9,10 @@ The primary aim of the app is to simplify the discovery, planning and booking pr
 2. You can find the server portion here [take-me-out-server](https://github.com/vdalx/take-me-out-server)
 3. Repeat step one for the server portion
 4. Create your .env files for the client and server - there is a sample.env file available in each for reference
-5. On the server side you will need to run migration and seed files
-6. The password must have at least 8 characters, one uppercase letter, one lowercase letter, one number and one special character
+5. You will need to generate a Mapbox token and add it to your .env file
+6. On the server side you will need to run migration and seed files
+7. The password must have at least 8 characters, one uppercase letter, one lowercase letter, one number and one special character
+8. There is one test user set up already - the email is example@email.com and the password is Testing123!
 
 ## Screenshot
 ![App Screenshot](./src/assets/screenshots/take-me-out-screenshot.png)
