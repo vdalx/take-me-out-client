@@ -79,7 +79,13 @@
         justify-content: center;
         margin: 1.5rem 0rem 1.5rem 0rem;
     }
-    &__btn {
+    &__save-btn {
+        background-color: $type-three-btn;
+        border: 0.0625rem solid $type-three-btn-border;
+        color: $type-one-btn-text;
+        margin-right: 1rem;
+    }
+    &__tickets-btn {
         background-color: $type-one-btn;
         border: 0.0625rem solid $type-one-btn-border;
         color: $type-one-btn-text;

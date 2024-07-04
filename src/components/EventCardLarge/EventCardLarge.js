@@ -5,6 +5,8 @@ import ProgressBar from '../ProgressBar';
 import EventBadge from '../EventBadge';
 import PrimaryButton from '../PrimaryButton';
 import EventMap from '../EventMap';
+import SaveEventButton from '../SaveEventButton';
+import Tooltip from '../Tooltip';
 
 const EventCardLarge = () => {
 
@@ -36,7 +38,8 @@ const EventCardLarge = () => {
                     </div>
                     <div className='event-card-large__event-state'>
                         <EventBadge
-                            badgeType='saved'
+                            badgeType='default'
+                            ticketPrice={event.ticket_price}
                         />
                     </div>
                 </div>
@@ -44,8 +47,13 @@ const EventCardLarge = () => {
                     <p className='event-card-large__event-desc'>{event.event_desc}</p>
                 </div>
                 <div className='event-card-large__event-tickets'>
+                    <Tooltip content="Save for later!" direction="top">
+                        <SaveEventButton
+                            className='event-card-large__save-btn'
+                        />
+                    </Tooltip>
                     <PrimaryButton 
-                        className='event-card-large__btn'
+                        className='event-card-large__tickets-btn'
                         btnType='button'
                         btnText='get tickets'
                     />
