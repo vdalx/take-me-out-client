@@ -1,6 +1,6 @@
 import './EventCardLarge.scss';
-import { useState, useContext } from 'react';
-import { getToken } from '../../tokenUtils';
+import { useState, useContext, useEffect } from 'react';
+import axiosInstance from '../../utils';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { EventContext } from '../../pages/EventPage/EventPage';
 import ProgressBar from '../ProgressBar';
@@ -14,19 +14,53 @@ import { useAuth } from '../../authContext';
 const EventCardLarge = () => {
 
     const event = useContext(EventContext);
-    const [savedEvent, setSavedEvent] = useState(false);
+    const [savedEventStatus, setSavedEventStatus] = useState(false);
+    const [userEventStatus, setUserEventStatus] = useState("");
+    const [profileId, setProfileId] = useState("");
+    const [eventId, setEventId] = useState("");
+    const [savedEvent, setSavedEvent] = useState("");
+    const [errMessage, setErrMessage] = useState("");
+
     const { isLoggedIn, profileData } = useAuth();
     const navigate = useNavigate();
     const [query] = useSearchParams();
 
     const handleSaveClick = () => {
         if (isLoggedIn) {
-            setSavedEvent(!savedEvent)
+            setUserEventStatus("saved");
+            setProfileId(profileData.userId)
+            setEventId(event.id)
+            setSavedEventStatus(!savedEventStatus);
         } else {
             const path = query.get('/login') || '/account';
-            navigate(path)
+            setTimeout(()=> {navigate(path)}, 2000)
         }
     }
+
+    const handleSubmit = () => {
+        console.log(`handle submit`, savedEventStatus)
+        if(savedEventStatus) {
+            axiosInstance.post('/users/profile/saved-events', {
+                user_event_status: userEventStatus,
+                user_id: profileId,
+                event_id: eventId
+            })
+            .then(result => {
+                setSavedEvent(result.data);
+                console.log(result)
+            })
+            .catch(err => {
+                console.log(err);
+                setErrMessage('Failed to save event');
+            });
+        } else {
+            setErrMessage('Failed to save event');
+        }
+    }
+
+    useEffect(() => {
+        handleSubmit()
+    },[savedEventStatus]);
 
     return (
         <div className='event-card-large'>
@@ -66,7 +100,7 @@ const EventCardLarge = () => {
                     <Tooltip content="Save for later!" direction="top">
                         <SaveEventButton
                             className='event-card-large__save-btn'
-                            status={savedEvent}
+                            status={savedEventStatus}
                             handleSaveClick={handleSaveClick}
                         />
                     </Tooltip>
