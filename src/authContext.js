@@ -1,11 +1,11 @@
 import { createContext, useState, useContext, useEffect} from 'react';
-import axiosInstance from '../../utils';
-import { getToken } from '../../tokenUtils';
+import axiosInstance from '../src/utils';
+import { getToken } from '../src/tokenUtils';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const AuthContext = createContext();
 
-const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }) => {
     const navigate = useNavigate();
     const [query] = useSearchParams();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -15,16 +15,9 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         axiosInstance.get('/users/profile', getToken())
             .then(result => {
-                if (!result.data.firstName || !result.data.lastName) {
-                    setIsLoggedIn(true);
-                    setProfileData(result.data);
-                    const path = query.get('/account') || '/account/settings';
-                    navigate(path)
-                } else {
-                    setIsLoggedIn(true);
-                    setProfileData(result.data);
-                    setExistingUser(true);
-                }
+                setIsLoggedIn(true);
+                setProfileData(result.data);
+                setExistingUser(true);
             })
             .catch(err => {
             if (err.response && err.response.status === 401) {
@@ -41,7 +34,5 @@ const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-
-export default AuthProvider;
 
 export const useAuth = () => useContext(AuthContext);
