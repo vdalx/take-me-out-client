@@ -13,6 +13,7 @@ import EventPage from './pages/EventPage';
 import VenuePage from './pages/VenuePage';
 import HeaderNavigation from './components/HeaderNavigation';
 import Footer from './components/Footer';
+import { AuthProvider } from './authContext';
 
 function App() {
   return (

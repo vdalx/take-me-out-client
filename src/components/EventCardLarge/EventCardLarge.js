@@ -1,9 +1,6 @@
 import './EventCardLarge.scss';
-import axios from 'axios';
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { EventContext } from '../../pages/EventPage/EventPage';
-import { useState } from 'react';
-import { toast } from 'react-toastify';
 import ProgressBar from '../ProgressBar';
 import EventBadge from '../EventBadge';
 import PrimaryButton from '../PrimaryButton';
@@ -14,10 +11,7 @@ import Tooltip from '../Tooltip';
 const EventCardLarge = () => {
 
     const event = useContext(EventContext);
-    const apiUrl = process.env.REACT_APP_API_URL;
     const [savedEvent, setSavedEvent] = useState(false);
-
-    console.log(savedEvent)
 
     const handleSaveClick = () => {
         setSavedEvent(!savedEvent)

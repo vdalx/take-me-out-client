@@ -1,5 +1,4 @@
 import './SaveEventButton.scss';
-import { useState } from 'react';
 import addSign from '../../assets/icons/plus-solid.svg';
 import saveSign from '../../assets/icons/check-solid.svg';
 
