@@ -20,10 +20,8 @@ export const AuthProvider = ({ children }) => {
                 setExistingUser(true);
             })
             .catch(err => {
-            if (err.response && err.response.status === 401) {
+            if (err.response.status === 401) {
                 setIsLoggedIn(false);
-            } else {
-                console.error('Error fetching user profile:', err);
             }
         });
     },[navigate, query]);

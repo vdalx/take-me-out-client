@@ -1,5 +1,7 @@
 import './EventCardLarge.scss';
 import { useState, useContext } from 'react';
+import { getToken } from '../../tokenUtils';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { EventContext } from '../../pages/EventPage/EventPage';
 import ProgressBar from '../ProgressBar';
 import EventBadge from '../EventBadge';
@@ -7,14 +9,23 @@ import PrimaryButton from '../PrimaryButton';
 import EventMap from '../EventMap';
 import SaveEventButton from '../SaveEventButton';
 import Tooltip from '../Tooltip';
+import { useAuth } from '../../authContext';
 
 const EventCardLarge = () => {
 
     const event = useContext(EventContext);
     const [savedEvent, setSavedEvent] = useState(false);
+    const { isLoggedIn, profileData } = useAuth();
+    const navigate = useNavigate();
+    const [query] = useSearchParams();
 
     const handleSaveClick = () => {
-        setSavedEvent(!savedEvent)
+        if (isLoggedIn) {
+            setSavedEvent(!savedEvent)
+        } else {
+            const path = query.get('/login') || '/account';
+            navigate(path)
+        }
     }
 
     return (
