@@ -45,8 +45,15 @@
     width: 5.3rem;
   }
   &__img {
+    object-fit: contain;
+    &--default {
+      height: 60%;
+      width: 60%;
+  }
+  &--user {
     height: 100%;
     width: 100%;
+  }
   }
   &__details-container {
     align-items: center;

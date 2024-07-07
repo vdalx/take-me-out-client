@@ -1,6 +1,5 @@
 import './ProfileCard.scss';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
-import UserImg from '../../assets/images/user-photo-1633332755192-727a05c4013d.webp';
 import UserIcon from '../../assets/icons/user-solid.svg';
 import LocationIcon from '../../assets/icons/location-dot-solid.svg';
 import EditIcon from '../../assets/icons/edit-pen-regular.svg';
@@ -8,7 +7,7 @@ import LogoutIcon from '../../assets/icons/logout-arrow-solid.svg';
 import { removeToken } from '../../tokenUtils';
 
 
-const ProfileCard = ({ firstName, lastName, userLocation }) => {
+const ProfileCard = ({ firstName, lastName, userImage, userCity }) => {
 
     const navigate = useNavigate();
     const [query] = useSearchParams();
@@ -30,7 +29,7 @@ const ProfileCard = ({ firstName, lastName, userLocation }) => {
             <div className='profile-card__container'>
                 <div className='profile-card__profile-details'>
                     <div className='profile-card__img-container'>
-                        <img className='profile-card__img' src={UserImg} alt='Shows the user associated with the account'/>
+                        <img className={`profile-card__img profile-card__img--${userImage ? 'user' : 'default'}`} src={userImage ? userImage : UserIcon} alt='Shows the user associated with the account'/>
                     </div>
                     <div className='profile-card__details-container'>
                         <div className='profile-card__user-name-container'>
@@ -42,7 +41,7 @@ const ProfileCard = ({ firstName, lastName, userLocation }) => {
                         <div className='profile-card__user-location-container'>
                             <img className='profile-card__location-icon' src={LocationIcon} alt='An icon indicating a location'/>
                             <h3 className='profile-card__location-name'>
-                                {userLocation}
+                                {userCity}
                             </h3>
                         </div>
                     </div>

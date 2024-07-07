@@ -33,7 +33,6 @@ const AccountPage = () => {
                 }
             })
             .then(eventsResult => {
-                console.log(eventsResult)
                 if (eventsResult) {
                     setSavedEventsData(eventsResult.data.filter((status) => status.user_event_status === "saved"))
                     setConfirmedEventsData(eventsResult.data.filter((status) => status.user_event_status === "confirmed"))
@@ -56,7 +55,8 @@ const AccountPage = () => {
                     <ProfileCard
                         firstName={profileData.firstName}
                         lastName={profileData.lastName}
-                        userLocation={profileData.location}
+                        userImage={''}
+                        userCity={profileData.location}
                     />
                     <EventListContainer 
                         eventListTitle='Upcoming Events'

@@ -10,7 +10,6 @@ const VenueCardSmall = () => {
         venue_image: EventImg
     }]
 
-    console.log(defaultVenue)
     return (
         <div className='venue-card-small'>
             <div className='venue-card-small__hero-img-container'>
