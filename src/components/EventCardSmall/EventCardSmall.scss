@@ -39,7 +39,7 @@
         padding: 1rem;
     }
     &__event-details {
-        align-items: flex-start;
+        align-items: first baseline;
         display: flex;
         justify-content: space-between;
     }
@@ -55,6 +55,7 @@
         text-transform: capitalize;
         font-size: 1.25rem;
         margin-bottom: 0.25rem;
+        
     }
     &__event-status-container {
         align-items: center;

@@ -7,7 +7,9 @@ const VenueListContainer = ({ venueListTitle }) => {
             <div className='venue-list-container__title-wrap'>
                 <h2>{venueListTitle}</h2>
             </div>
-            <VenueCardSmall />
+            <div className='venue-list-container__card-wrap'>
+                <VenueCardSmall />
+            </div>
         </div>
     )
 }
