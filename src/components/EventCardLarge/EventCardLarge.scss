@@ -77,7 +77,18 @@
         align-items: center;
         display: flex;
         justify-content: center;
-        margin: 1.5rem 0rem 1.5rem 0rem;
+        margin-bottom: 1rem;
+    }
+    &__message-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    &__confirmation-message {
+        background-color: $confirmation-message-background;
+        padding: 0.35rem;
     }
     &__save-btn {
         background-color: $type-three-btn;

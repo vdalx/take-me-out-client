@@ -47,7 +47,7 @@ const EventCardLarge = () => {
             })
             .then(result => {
                 setConfirmationMessage('Successfully saved event!');
-                setTimeout(() => setConfirmationMessage(''), 5000); // Clear the message after 5 seconds
+                setTimeout(() => setConfirmationMessage(''), 3000); // Clear the message after 3 seconds
             })
             .catch(err => {
                 console.log(err);
@@ -68,8 +68,8 @@ const EventCardLarge = () => {
             })
             .then(result => {
                 setSavedEventStatus(false);
-                setConfirmationMessage('Event removed from saved events!)');
-                setTimeout(() => setConfirmationMessage(""), 5000); // Clear the message after 5 seconds
+                setConfirmationMessage('Event removed from saved events!');
+                setTimeout(() => setConfirmationMessage(""), 3000); // Clear the message after 3 seconds
             })
             .catch(err => {
                 console.log(err);
@@ -126,8 +126,10 @@ const EventCardLarge = () => {
                         btnText='get tickets'
                     />
                 </div>
-                {confirmationMessage && <div className='event-card-large__confirmation-message'>{confirmationMessage}</div>}
-                {errMessage && <div className='event-card-large__error-message'>{errMessage}</div>}
+                <div className='event-card-large__message-container'>
+                    {confirmationMessage && <div className='event-card-large__confirmation-message'>{confirmationMessage}</div>}
+                    {errMessage && <div className='event-card-large__error-message'>{errMessage}</div>}
+                </div>
                 <div className='event-card-large__event-map'>
                     <EventMap />
                 </div>
