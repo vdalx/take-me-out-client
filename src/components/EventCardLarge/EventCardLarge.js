@@ -1,5 +1,5 @@
 import './EventCardLarge.scss';
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext, useEffect, useRef, useCallback } from 'react';
 import axiosInstance from '../../utils';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { EventContext } from '../../pages/EventPage/EventPage';
@@ -15,11 +15,9 @@ const EventCardLarge = () => {
 
     const event = useContext(EventContext);
     const [savedEventStatus, setSavedEventStatus] = useState(false);
-    const [userEventStatus, setUserEventStatus] = useState("");
-    const [profileId, setProfileId] = useState("");
-    const [eventId, setEventId] = useState("");
-    const [savedEvent, setSavedEvent] = useState("");
     const [errMessage, setErrMessage] = useState("");
+    const [confirmationMessage, setConfirmationMessage] = useState("");
+    const initialRenderComplete = useRef(false)
 
     const { isLoggedIn, profileData } = useAuth();
     const navigate = useNavigate();
@@ -27,27 +25,23 @@ const EventCardLarge = () => {
 
     const handleSaveClick = () => {
         if (isLoggedIn) {
-            setUserEventStatus("saved");
-            setProfileId(profileData.userId)
-            setEventId(event.id)
-            setSavedEventStatus(!savedEventStatus);
+            setSavedEventStatus(prevStatus => !prevStatus);
         } else {
             const path = query.get('/login') || '/account';
-            setTimeout(()=> {navigate(path)}, 2000)
+            navigate(path);
         }
     }
 
-    const handleSubmit = () => {
-        console.log(`handle submit`, savedEventStatus)
-        if(savedEventStatus) {
+    const handleSave = useCallback(() => {
+        if (profileData && event) {
             axiosInstance.post('/users/profile/saved-events', {
-                user_event_status: userEventStatus,
-                user_id: profileId,
-                event_id: eventId
+                user_event_status: "saved",
+                user_id: profileData.userId,
+                event_id: event.id
             })
             .then(result => {
-                setSavedEvent(result.data);
-                console.log(result)
+                setConfirmationMessage('Successfully saved event!');
+                setTimeout(() => setConfirmationMessage(''), 5000); // Clear the message after 5 seconds
             })
             .catch(err => {
                 console.log(err);
@@ -56,11 +50,39 @@ const EventCardLarge = () => {
         } else {
             setErrMessage('Failed to save event');
         }
-    }
+    }, [profileData, event])
+
+    const handleDelete = useCallback(() => {
+        if (profileData && event) {
+            axiosInstance.delete('/users/profile/saved-events', {
+                data: {
+                    user_id: profileData.userId,
+                    event_id: event.id
+                }
+            })
+            .then(result => {
+                setSavedEventStatus(false);
+                setConfirmationMessage("Event removed from saved events");
+                setTimeout(() => setConfirmationMessage(""), 5000); // Clear the message after 5 seconds
+            })
+            .catch(err => {
+                console.log(err);
+                setErrMessage('Failed to remove event one');
+            });
+        }
+    }, [profileData, event])
 
     useEffect(() => {
-        handleSubmit()
-    },[savedEventStatus]);
+        if(initialRenderComplete.current) {
+            if (savedEventStatus) {
+                handleSave();
+            } else {
+                handleDelete();
+            }
+    } else {
+        initialRenderComplete.current = true;
+    }
+    }, [savedEventStatus, handleSave, handleDelete]);
 
     return (
         <div className='event-card-large'>
@@ -73,7 +95,7 @@ const EventCardLarge = () => {
                 <div className='event-card-large__event-details'>
                     <div className='event-card-large__event-info-container'>
                         <h3 className='event-card-large__event-name'>{event.event_name}</h3>
-                        <p className='event-card-large_event-venue'>{event.venue_name}</p>
+                        <p className='event-card-large__event-venue'>{event.venue_name}</p>
                         <p className='event-card-large__event-location'>{`${event.venue_address}, ${event.venue_city}`}</p>
                     </div>
                     <div className='event-card-large__event-date-container'>
@@ -110,6 +132,8 @@ const EventCardLarge = () => {
                         btnText='get tickets'
                     />
                 </div>
+                {confirmationMessage && <div className='event-card-large__confirmation-message'>{confirmationMessage}</div>}
+                {errMessage && <div className='event-card-large__error-message'>{errMessage}</div>}
                 <div className='event-card-large__event-map'>
                     <EventMap />
                 </div>
