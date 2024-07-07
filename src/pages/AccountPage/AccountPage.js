@@ -60,10 +60,12 @@ const AccountPage = () => {
                     <EventListContainer 
                         eventListTitle='Upcoming Events'
                         events={confirmedEventsData}
+                        type={'confirmed'}
                     />
                     <EventListContainer 
                         eventListTitle='Saved Events'
                         events={savedEventsData}
+                        type='saved'
                     />
                     <VenueListContainer venueListTitle='Favourite Venues' />
                 </div>

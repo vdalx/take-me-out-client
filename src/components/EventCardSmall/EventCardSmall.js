@@ -8,7 +8,7 @@ const EventCardSmall = ({ event }) => {
     return (
         <div className='event-card-small'>
             <Link
-                to={`/events/${event.id}`}
+                to={`/events/${event.event_id}`}
                 className='event-card-small__link'
             >
                 <div className='event-card-small__hero-img-container'>
