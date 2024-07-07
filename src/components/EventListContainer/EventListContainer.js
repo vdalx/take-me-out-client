@@ -20,7 +20,7 @@ const EventListContainer = ({ eventListTitle, events, type}) => {
                 {sortedEvents.length > 0 ? (
                     sortedEvents.map(event =>
                         <EventCardSmall
-                            key={event.event_id}
+                            key={event.id}
                             event={event}
                         />
                     )

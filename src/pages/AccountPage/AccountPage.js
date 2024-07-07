@@ -33,6 +33,7 @@ const AccountPage = () => {
                 }
             })
             .then(eventsResult => {
+                console.log(eventsResult)
                 if (eventsResult) {
                     setSavedEventsData(eventsResult.data.filter((status) => status.user_event_status === "saved"))
                     setConfirmedEventsData(eventsResult.data.filter((status) => status.user_event_status === "confirmed"))
