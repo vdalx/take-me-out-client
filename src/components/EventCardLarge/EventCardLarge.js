@@ -1,5 +1,5 @@
 import './EventCardLarge.scss';
-import { useState, useContext, useEffect, useRef, useCallback } from 'react';
+import { useState, useContext } from 'react';
 import axiosInstance from '../../utils';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { EventContext } from '../../pages/EventPage/EventPage';
@@ -17,7 +17,6 @@ const EventCardLarge = () => {
     const [savedEventStatus, setSavedEventStatus] = useState(false);
     const [errMessage, setErrMessage] = useState("");
     const [confirmationMessage, setConfirmationMessage] = useState("");
-    const initialRenderComplete = useRef(false)
 
     const { isLoggedIn, profileData } = useAuth();
     const navigate = useNavigate();
@@ -25,14 +24,21 @@ const EventCardLarge = () => {
 
     const handleSaveClick = () => {
         if (isLoggedIn) {
-            setSavedEventStatus(prevStatus => !prevStatus);
+            const newStatus = !savedEventStatus;
+            setSavedEventStatus(newStatus);
+
+            if (newStatus) {
+                handleSave();
+            } else {
+                handleDelete();
+            }
         } else {
             const path = query.get('/login') || '/account';
             navigate(path);
         }
     }
 
-    const handleSave = useCallback(() => {
+    const handleSave = () => {
         if (profileData && event) {
             axiosInstance.post('/users/profile/saved-events', {
                 user_event_status: "saved",
@@ -50,9 +56,9 @@ const EventCardLarge = () => {
         } else {
             setErrMessage('Failed to save event');
         }
-    }, [profileData, event])
+    }
 
-    const handleDelete = useCallback(() => {
+    const handleDelete = () => {
         if (profileData && event) {
             axiosInstance.delete('/users/profile/saved-events', {
                 data: {
@@ -62,7 +68,7 @@ const EventCardLarge = () => {
             })
             .then(result => {
                 setSavedEventStatus(false);
-                setConfirmationMessage("Event removed from saved events");
+                setConfirmationMessage('Event removed from saved events!)');
                 setTimeout(() => setConfirmationMessage(""), 5000); // Clear the message after 5 seconds
             })
             .catch(err => {
@@ -70,19 +76,7 @@ const EventCardLarge = () => {
                 setErrMessage('Failed to remove event one');
             });
         }
-    }, [profileData, event])
-
-    useEffect(() => {
-        if(initialRenderComplete.current) {
-            if (savedEventStatus) {
-                handleSave();
-            } else {
-                handleDelete();
-            }
-    } else {
-        initialRenderComplete.current = true;
     }
-    }, [savedEventStatus, handleSave, handleDelete]);
 
     return (
         <div className='event-card-large'>
