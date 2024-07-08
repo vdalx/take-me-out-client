@@ -1,6 +1,7 @@
 import './EventCardLarge.scss';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import axiosInstance from '../../utils';
+import { getToken } from '../../tokenUtils';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { EventContext } from '../../pages/EventPage/EventPage';
 import ProgressBar from '../ProgressBar';
@@ -15,8 +16,8 @@ const EventCardLarge = () => {
 
     const event = useContext(EventContext);
     const [savedEventStatus, setSavedEventStatus] = useState(false);
-    const [errMessage, setErrMessage] = useState("");
-    const [confirmationMessage, setConfirmationMessage] = useState("");
+    const [errMessage, setErrMessage] = useState('');
+    const [confirmationMessage, setConfirmationMessage] = useState('');
 
     const { isLoggedIn, profileData } = useAuth();
     const navigate = useNavigate();
@@ -77,6 +78,18 @@ const EventCardLarge = () => {
             });
         }
     }
+    
+    useEffect(() => {
+        axiosInstance.get('/users/profile/saved-events', getToken())
+            .then(result => {
+                const userEvents = result.data;
+                const isEventSaved = userEvents.some((i) => i.id === event.id);
+                setSavedEventStatus(isEventSaved);
+            })
+            .catch(err => {
+                console.log(err)
+            });
+    },[event.id]);
 
     return (
         <div className='event-card-large'>
