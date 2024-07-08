@@ -5,6 +5,11 @@ import EventBadge from '../EventBadge';
 
 const EventCardSmall = ({ event }) => {
 
+    const formatDate = (date) => {
+        const options = { month: 'short', day: '2-digit', year: '2-digit' };
+        return new Date(date).toLocaleDateString('en-UK', options).replace(',', '');
+    };
+
     return (
         <div className='event-card-small'>
             <Link
@@ -24,7 +29,7 @@ const EventCardSmall = ({ event }) => {
                             <p className='event-card-small__event-location'>{event.venue_city}</p>
                         </div>
                         <div className='event-card-small__event-date-container'>
-                            <p className='event-card-small__event-date'>{event.event_date.substring(0, 10)}</p>
+                            <p className='event-card-small__event-date'>{formatDate(event.event_date)}</p>
                         </div>
                     </div>
                     <div className='event-card-small__event-status-container'>

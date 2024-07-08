@@ -77,9 +77,26 @@
         align-items: center;
         display: flex;
         justify-content: center;
-        margin: 1.5rem 0rem 1.5rem 0rem;
+        margin-bottom: 1rem;
     }
-    &__btn {
+    &__message-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    &__confirmation-message {
+        background-color: $confirmation-message-background;
+        padding: 0.35rem;
+    }
+    &__save-btn {
+        background-color: $type-three-btn;
+        border: 0.0625rem solid $type-three-btn-border;
+        color: $type-one-btn-text;
+        margin-right: 1rem;
+    }
+    &__tickets-btn {
         background-color: $type-one-btn;
         border: 0.0625rem solid $type-one-btn-border;
         color: $type-one-btn-text;

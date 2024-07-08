@@ -10,10 +10,10 @@
         border-radius: 50%;
         display: flex;
         flex-direction: row;
-        height: 2.75rem;
+        height: 2.25rem;
         justify-content: center;
         overflow: hidden;
-        width: 2.75rem;
+        width: 2.25rem;
         &--saved {
             background: $tertiary-highlight;
         }
@@ -22,6 +22,14 @@
         }
         &--default {
             background: $secondary-highlight;
+        }
+        @include tablet {
+            height: 2.75rem;
+            width: 2.75rem;
+        }
+        @include desktop {
+            height: 3.5rem;
+            width: 3.5rem;
         }
     }
     &__img {

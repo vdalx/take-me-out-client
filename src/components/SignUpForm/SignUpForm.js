@@ -15,7 +15,7 @@ const SignUpForm = () => {
         email: '',
         password: '',
         confirmPassword: '',
-        termsAccepted: false,
+        termsConditions: false,
     };
 
     const [values, setValues] = useState(initialValues);
@@ -25,13 +25,22 @@ const SignUpForm = () => {
     const [errMessage, setErrMessage] = useState('');
 
     const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setValues((prev) => {
-            return {
-                ...prev,
-                [name]: value,
-            };
-        });
+        const { name, value, checked } = e.target;
+        if (name === 'termsConditions') {
+            setValues((prev) => {
+                return {
+                    ...prev,
+                    [name]: checked,
+                };
+            });
+        } else {
+            setValues((prev) => {
+                return {
+                    ...prev,
+                    [name]: value,
+                };
+            });
+        }
     };
 
     const isEmailValid = (email) => {
@@ -171,7 +180,7 @@ const SignUpForm = () => {
                             type='checkbox'
                             id='terms-conditions'
                             name='termsConditions'
-                            checked={values.termsAccepted}
+                            checked={values.termsConditions}
                             onChange={handleInputChange}
                         />
                         <label 

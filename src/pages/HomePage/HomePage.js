@@ -20,7 +20,7 @@ const HomePage = () => {
     return (
         <div className='home-page'>
             <ArticleListContainer
-                articleListTitle='What is happening?'
+                articleListTitle="What's happening?"
                 postList={contentData}
             />
         </div>

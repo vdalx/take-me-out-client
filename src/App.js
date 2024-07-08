@@ -13,27 +13,30 @@ import EventPage from './pages/EventPage';
 import VenuePage from './pages/VenuePage';
 import HeaderNavigation from './components/HeaderNavigation';
 import Footer from './components/Footer';
+import { AuthProvider } from './authContext';
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-      <HeaderNavigation />
-      <Routes>
-        <Route path='/' element={<LandingPage/>} />
-        <Route path='/home' element={<HomePage/>} />
-        <Route path='/posts/:postId' element={<ArticlePage/>} />
-        <Route path='/create-account' element={<CreateAccountPage/>} />
-        <Route path='/login' element={<LoginPage/>} />
-        <Route path='/account' element={<AccountPage/>} />
-        <Route path='/account/settings' element={<AccountSettingsPage/>} />
-        <Route path='/events' element={<EventListingsPage/>} />
-        <Route path='/events/:eventId' element={<EventPage/>} />
-        <Route path='/venues' element={<VenuePage/>} />
-      </Routes>
-      <Footer />
-      </BrowserRouter>
-    </div>
+      <div className="App">
+        <BrowserRouter>
+        <AuthProvider>
+        <HeaderNavigation />
+        <Routes>
+          <Route path='/' element={<LandingPage/>} />
+          <Route path='/home' element={<HomePage/>} />
+          <Route path='/posts/:postId' element={<ArticlePage/>} />
+          <Route path='/create-account' element={<CreateAccountPage/>} />
+          <Route path='/login' element={<LoginPage/>} />
+          <Route path='/account' element={<AccountPage/>} />
+          <Route path='/account/settings' element={<AccountSettingsPage/>} />
+          <Route path='/events' element={<EventListingsPage/>} />
+          <Route path='/events/:eventId' element={<EventPage/>} />
+          <Route path='/venues' element={<VenuePage/>} />
+        </Routes>
+        <Footer />
+        </AuthProvider>
+        </BrowserRouter>
+      </div>
   );
 }
 

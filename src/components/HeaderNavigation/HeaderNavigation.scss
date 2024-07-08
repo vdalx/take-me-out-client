@@ -105,6 +105,10 @@
             }
         }
     }
+    &__profile-icon-link {
+        color: $primary-text;
+        text-decoration: none;
+    }
     &__links-url {
         color: $secondary-text;
         text-decoration: none;

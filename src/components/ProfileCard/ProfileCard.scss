@@ -3,71 +3,136 @@
 @use '../../styles/partials/mixins' as *;
 
 .profile-card {
-&__container {
-   background-color: $form-background;
-   border-radius: 0.2rem;
-   box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.10);
-   display: flex;
-   justify-content: flex-start;
-   margin: 1.25rem;
-   padding: 1rem;
-   @include tablet {
-      margin: 1.75rem;
+  &__container {
+    align-items: center;
+    background-color: $form-background;
+    border-radius: 0.2rem;
+    box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.10);
+    display: flex;
+    flex-direction: column;
+    margin: 1.25rem;
+    padding: 1rem;
+    @include tablet {
+        margin: 1.75rem;
+        flex-direction: row;
+      }
+    @include desktop {
+        margin: 4rem;
+      }
+  }
+  &__profile-details {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 1.15rem;
+    @include tablet {
+      width: 60%;
+      margin-bottom: auto;
     }
-   @include desktop {
-      margin: 4rem;
+    @include desktop {
+      width: 80%;
     }
-}
- &__img-container {
-   align-items: center;
-   background-color: $tertiary-background;
-   border-radius: 50%;
-   display: flex;
-   height: 5.3rem;
-   justify-content: center;
-   margin: 0.75rem;
-   overflow: hidden;
-   width: 5.3rem;
- }
- &__img {
-   height: 100%;
-   width: 100%;
- }
- &__details-container {
-   align-items: center;
-   display: flex;
-   flex: 2 1 0;
-   flex-direction: column;
-   justify-content: space-evenly;
-   margin: 1.25rem 1.25rem 0.25rem 1.25rem;
- }
- &__user-name-container {
-   display: flex;
-   justify-content:first baseline;
-   margin-bottom: 0.5rem;
-   width: 100%;
- }
- &__user-location-container {
-   display: flex;
-   justify-content:first baseline;
-   width: 100%;
- }
- &__user-name {
-   text-transform: capitalize;
- }
- &__user-icon, &__location-icon {
-   height: 1rem;
-   margin-right: 1rem;
-   text-align: left;
- }
- &__edit-profile-prompt {
-   margin-top: auto;
-   text-align: center;
-   width: 100%;
- }
- &__edit-profile-link {
-   color: $tertiary-text;
-   font-weight: 700;
-   text-transform: capitalize;
- }
+  }
+  &__img-container {
+    align-items: center;
+    background-color: $tertiary-background;
+    border-radius: 50%;
+    display: flex;
+    height: 5.3rem;
+    justify-content: center;
+    margin: 0.75rem;
+    overflow: hidden;
+    width: 5.3rem;
+  }
+  &__img {
+    object-fit: contain;
+    &--default {
+      height: 60%;
+      width: 60%;
+    }
+    &--user {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &__details-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 1.25rem 1.25rem 0.25rem 1.25rem;
+  }
+  &__user-name-container {
+    align-items: center;
+    display: flex;
+    justify-content:first baseline;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  &__user-location-container {
+    align-items: center;
+    display: flex;
+    justify-content:first baseline;
+    width: 100%;
+  }
+  &__user-name {
+    text-transform: capitalize;
+  }
+  &__user-icon, &__location-icon {
+    height: 1rem;
+    margin-right: 1rem;
+    text-align: left;
+    @include desktop {
+      height: 1.25rem;
+      margin-right: 1.25rem;
+    }
+  }
+  &__edit-logout-container {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  &__btn-container {
+    align-items: center;
+    background-color: $type-two-btn;
+    border: 0.0625rem solid $type-two-btn-border;
+    border-radius: 0.25rem;
+    box-shadow: 0px 4px 5px 0px rgba(19,24,44,0.25);
+    color: $type-two-btn-text;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0.25rem 1.25rem 0.25rem 0.25rem;
+    position: relative;
+    width: 10rem;
+    &--logout {
+      background-color: $type-one-btn;
+      border: 0.0625rem solid $type-one-btn-border;
+      color: $type-one-btn-text;
+      margin-top: 1rem;
+    }
+      @include tablet {
+        border-radius: 0.25rem;
+        box-shadow: 0px 4px 5px 0px rgba(19,24,44,0.25);
+        font-size: 1rem;
+        padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+        width: 12rem;
+    }
+  }
+  &__btn-link {
+    color: $primary-text;
+    text-decoration: none;
+  }
+  &__btn-icon {
+    height: 1rem;
+    width: 15%;
+  }
+  &__btn-title {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    width: 85%;
+  }
 }

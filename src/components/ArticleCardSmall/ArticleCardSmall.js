@@ -15,7 +15,7 @@ const ArticleCardSmall = ({ post }) => {
                 </div>
                 <div className='article-card-small__content-container'>
                     <div className='article-card-small__title-container'>
-                        <h3 className='article-card-small__title'>{post.post_name}</h3>
+                        <h2 className='article-card-small__title'>{post.post_name}</h2>
                     </div>
                     <div className='article-card-small__body-container'>
                         <p className='article-card-small__body-container'>{post.post_desc}</p>

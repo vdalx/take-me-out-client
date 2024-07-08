@@ -3,6 +3,7 @@
 @use '../../styles/partials/mixins' as *;
 
 .account-settings {
+    align-items: center;
     background-color: $form-background;
     border-radius: 0.2rem;
     box-shadow: 0rem 0.125rem 0.3125rem 0rem rgba(19, 24, 44, 0.10);
@@ -19,6 +20,7 @@
     &__content-container {
         display: flex;
         justify-content: space-between;
+        width: 100%;
     }
     &__title-container {
         align-items: center;
@@ -82,8 +84,15 @@
         width: 5.3rem;
     }
     &__avatar-image {
-        height: 100%;
-        width: 100%;
+        object-fit: contain;
+        &--default {
+          height: 60%;
+          width: 60%;
+        }
+        &--user {
+          height: 100%;
+          width: 100%;
+        }
     }
     &__upload-image-label {
         align-items: center;

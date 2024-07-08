@@ -8,6 +8,7 @@
         justify-content: space-evenly;
     }
     &__item-link {
+        color: $primary-text;
         text-decoration: none;
     }
     &__menu-tab {
@@ -31,9 +32,11 @@
         }
     }
     &__account-tab-container {
+        align-items: center;
         display: flex;
     }
     &__settings-tab-container {
+        align-items: center;
         display: flex;
     }
     &__tab-icon {
