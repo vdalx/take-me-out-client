@@ -1,0 +1,60 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+.article-card-large {
+    background-color: $form-background;
+    border-radius: 0.2rem;
+    box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.10);
+    margin: 1.25rem;
+    min-height: 100vh;
+    @include tablet {
+        margin: 1.75rem;
+    }
+    @include desktop {
+        margin: 4rem;
+    }
+    &__hero-banner {
+        align-items: center;
+        background-color: $tertiary-background;
+        display: flex;
+        flex-direction: row;
+        height: 8rem;
+        justify-content: center;
+        overflow: hidden;
+        width: 100%;
+        @include tablet {
+            height: 12rem;
+        }
+    }
+    &__hero-img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+    }
+    &__container {
+        @include tablet {
+            padding: 1.5rem;
+        }
+    }
+    &__content {
+        padding: 1rem;
+    }
+    &__title-container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+        @include tablet {
+            padding: 0rem 0rem 1rem 0rem;
+        }
+    }
+    &__title {
+        color: $tertiary-text;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        text-transform: capitalize;
+        width: 100%;
+    }
+}

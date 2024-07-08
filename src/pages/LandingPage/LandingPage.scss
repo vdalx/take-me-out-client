@@ -1,0 +1,63 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    background: $secondary-background;
+    &__background-wrap {
+        height: 100%;
+        width: 100%;
+        &:before {
+            content: '';
+            background-image: url('../../assets/images/mobile-kelvin-moquete-LOV7Gbmgm30-unsplash-640x960.jpg');
+            background-position: 50% 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            left: 0;
+            height: 100%;
+            opacity: 0.85;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            @include desktop {
+                background-image: url('../../assets/images/desktop-kelvin-moquete-LOV7Gbmgm30-unsplash-1920x1080.jpg');
+            }
+        }
+    }
+    &__content {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        position: relative;
+    }
+    &__btn-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 10rem;
+        @include desktop {
+            background-color: rgba(251, 252, 252, 0.75);
+            border-radius: 0.25rem;
+            padding: 1.5rem;
+        }
+    }
+    &__btn {
+        &--type-one {
+            background-color: $type-one-btn;
+            border: 0.0625rem solid $type-one-btn-border;
+            color: $type-one-btn-text;
+        }
+        &--type-two {
+            border: 0.0625rem solid $type-two-btn-border;
+            background-color: $type-two-btn;
+            color: $type-two-btn-text;
+            margin-bottom: 1.5rem;
+        }
+    }   
+}

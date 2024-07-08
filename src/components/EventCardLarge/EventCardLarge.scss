@@ -1,0 +1,109 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+.event-card-large {
+    background-color: $form-background;
+    border-radius: 0.2rem;
+    box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.10);
+    margin: 1.25rem;
+    @include tablet {
+        margin: 2.5rem;
+    }
+    @include desktop {
+        margin: 4rem;
+    }
+    &__hero-container {
+        align-items: center;
+        background-color: $tertiary-background;
+        display: flex;
+    }
+    &__hero-img-container {
+        align-items: center;
+        background-color: $tertiary-background;
+        display: flex;
+        flex-direction: row;
+        height: 6.3125rem;
+        justify-content: center;
+        overflow: hidden;
+        width: 100%;
+        @include tablet {
+            height: 13rem;
+        }
+        @include desktop {
+            height: 20rem;
+        }
+    }
+    &__hero-img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+    &__event-container {
+        padding: 1rem;
+        @include tablet {
+            padding: 3rem;
+        }
+        @include desktop {
+            padding: 4rem;
+        }
+    }
+    &__event-details {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.25rem;
+        @include tablet {
+            margin-bottom: 0.5rem
+        }
+    }
+    &__event-name {
+        color: $tertiary-text;
+        text-transform: capitalize;
+        margin-bottom: 0.5rem;
+    }
+    &__event-status-container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__event-sellthru {
+        width: 65%;
+    }
+    &__event-desc-container {
+        min-height: 20vh;
+        margin: 1.25rem 0rem 1.25rem 0rem;
+    }
+    &__event-tickets {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+    &__message-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    &__confirmation-message {
+        background-color: $confirmation-message-background;
+        padding: 0.35rem;
+    }
+    &__save-btn {
+        background-color: $type-three-btn;
+        border: 0.0625rem solid $type-three-btn-border;
+        color: $type-one-btn-text;
+        margin-right: 1rem;
+    }
+    &__tickets-btn {
+        background-color: $type-one-btn;
+        border: 0.0625rem solid $type-one-btn-border;
+        color: $type-one-btn-text;
+    }
+    &__progress-bar-container {
+        @include tablet{
+            height: 2rem;
+        }
+    }
+}

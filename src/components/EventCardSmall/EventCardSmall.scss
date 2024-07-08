@@ -1,0 +1,68 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+.event-card-small {
+    background-color: $form-background;
+    border-radius: 0.2rem;
+    box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.10);
+    margin: 1.25rem;
+    @include tablet {
+        flex-basis: 21rem;
+    }
+    @include desktop {
+        margin: 1.25rem;
+    }
+    &__link {
+        color: $primary-text;
+        text-decoration: none;
+    }
+    &__hero-img-container {
+        align-items: center;
+        background-color: $tertiary-background;
+        display: flex;
+        flex-direction: row;
+        height: 5.7rem;
+        justify-content: center;
+        overflow: hidden;
+        width: 100%;
+        @include tablet {
+            height: 8.7rem;
+        }
+    }
+    &__hero-img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+    }
+    &__event-container {
+        padding: 1rem;
+    }
+    &__event-details {
+        align-items: first baseline;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__event-date-container {
+        padding-top: 0.15rem;
+        width: 31%;
+    }
+    &__event-date {
+        text-align: end;
+    }
+    &__event-name {
+        color: $tertiary-text;
+        text-transform: capitalize;
+        font-size: 1.25rem;
+        margin-bottom: 0.25rem;
+        
+    }
+    &__event-status-container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__event-sellthru {
+        width: 65%;
+    }
+}

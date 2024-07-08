@@ -1,0 +1,11 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+.home-page {
+    background: $secondary-background;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
