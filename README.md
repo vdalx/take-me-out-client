@@ -5,10 +5,10 @@ The primary aim of the app is to simplify the discovery, planning and booking pr
 
 ## Planning & Preperation Documentation
 
-### Figma Wireframe & Prototype
+#### Figma Wireframe & Prototype
 [Take Me Out - Initial Mobile Wireframe](https://www.figma.com/design/Lvd0ddemON0PUFdVQxMQI1/Take-Me-Out---Initial-Mobile-Wireframe?node-id=38-2&t=RMXAtT6DH6hQYMZz-0)
 
-### Trello Board for Tickets
+#### Trello Board for Tickets
 [Take Me Out Tickets](https://trello.com/b/icaHud7x/take-me-out)
 
 ## Run Locally
